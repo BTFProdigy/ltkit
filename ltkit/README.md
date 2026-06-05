@@ -21,7 +21,7 @@ language. All heavy tensor math lives behind the contract.
 |----------|:----------:|---------|:----:|
 | Python | ✅ | torch | ✅ `tests/test_smoke.py` |
 | Python | ✅ | keras/tf | ✅ `tests/test_keras_smoke.py` |
-| Python | — | jax | planned |
+| Python | ✅ | jax (+optax) | ✅ `tests/test_jax_smoke.py` |
 | Rust | ✅ | candle (BitNet target) | ✅ `cargo test --features candle` |
 | Rust | — | tch-rs | planned (shares libtorch) |
 | C++ | ✅ | libtorch | core done; backend planned |
@@ -37,7 +37,7 @@ ltkit/
   CONTRACT.md            canonical six-verb spec (language-agnostic)
   python/
     ltkit/core/          protocol.py, imp.py (engine)
-    ltkit/backends/      torch_backend.py (+ keras/jax planned)
+    ltkit/backends/      torch_backend.py, keras_backend.py, jax_backend.py
     tests/test_smoke.py
     pyproject.toml
   rust/
@@ -57,6 +57,7 @@ ltkit/
 # Python (torch + keras/tf)
 cd python && PYTHONPATH=$PWD python3 tests/test_smoke.py        # -> smoke OK
 KERAS_BACKEND=tensorflow PYTHONPATH=$PWD python3 tests/test_keras_smoke.py  # -> keras smoke OK
+JAX_PLATFORMS=cpu PYTHONPATH=$PWD python3 tests/test_jax_smoke.py           # -> jax smoke OK
 
 # Rust core + candle backend
 cd rust && cargo test                                          # pure core
