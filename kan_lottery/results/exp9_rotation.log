@@ -1,0 +1,73 @@
+[1/60] tabular plain mlp seed=0 in=50 val=0.9490 sp=0.591 t=27.2s
+[2/60] tabular plain mlp seed=1 in=50 val=0.9700 sp=0.591 t=26.3s
+[3/60] tabular plain mlp seed=2 in=50 val=0.9560 sp=0.591 t=26.1s
+[4/60] tabular plain mlp seed=3 in=50 val=0.9680 sp=0.591 t=25.9s
+[5/60] tabular plain mlp seed=4 in=50 val=0.9630 sp=0.591 t=25.8s
+[6/60] tabular plain kan seed=0 in=50 val=0.8250 sp=0.591 t=96.7s
+[7/60] tabular plain kan seed=1 in=50 val=0.9130 sp=0.591 t=97.2s
+[8/60] tabular plain kan seed=2 in=50 val=0.8810 sp=0.591 t=99.7s
+[9/60] tabular plain kan seed=3 in=50 val=0.8710 sp=0.591 t=99.1s
+[10/60] tabular plain kan seed=4 in=50 val=0.8500 sp=0.591 t=99.6s
+[11/60] tabular pca mlp seed=0 in=50 val=0.9490 sp=0.591 t=26.8s
+[12/60] tabular pca mlp seed=1 in=50 val=0.9700 sp=0.591 t=26.5s
+[13/60] tabular pca mlp seed=2 in=50 val=0.9540 sp=0.591 t=26.6s
+[14/60] tabular pca mlp seed=3 in=50 val=0.9620 sp=0.591 t=26.5s
+[15/60] tabular pca mlp seed=4 in=50 val=0.9530 sp=0.591 t=25.1s
+[16/60] tabular pca kan seed=0 in=50 val=0.8200 sp=0.591 t=98.4s
+[17/60] tabular pca kan seed=1 in=50 val=0.8990 sp=0.591 t=97.7s
+[18/60] tabular pca kan seed=2 in=50 val=0.8590 sp=0.591 t=99.2s
+[19/60] tabular pca kan seed=3 in=50 val=0.8760 sp=0.591 t=108.9s
+[20/60] tabular pca kan seed=4 in=50 val=0.7780 sp=0.591 t=108.0s
+[21/60] tabular premix mlp seed=0 in=50 val=0.9380 sp=0.591 t=32.0s
+[22/60] tabular premix mlp seed=1 in=50 val=0.9650 sp=0.591 t=31.8s
+[23/60] tabular premix mlp seed=2 in=50 val=0.9460 sp=0.591 t=30.8s
+[24/60] tabular premix mlp seed=3 in=50 val=0.9640 sp=0.591 t=32.0s
+[25/60] tabular premix mlp seed=4 in=50 val=0.9600 sp=0.591 t=30.6s
+[26/60] tabular premix kan seed=0 in=50 val=0.9240 sp=0.591 t=129.0s
+[27/60] tabular premix kan seed=1 in=50 val=0.9490 sp=0.591 t=127.9s
+[28/60] tabular premix kan seed=2 in=50 val=0.9280 sp=0.591 t=131.8s
+[29/60] tabular premix kan seed=3 in=50 val=0.9500 sp=0.591 t=124.3s
+[30/60] tabular premix kan seed=4 in=50 val=0.9490 sp=0.591 t=117.9s
+[31/60] mnist_d64 plain mlp seed=0 in=64 val=0.8350 sp=0.591 t=5.5s
+[32/60] mnist_d64 plain mlp seed=1 in=64 val=0.8250 sp=0.591 t=5.3s
+[33/60] mnist_d64 plain mlp seed=2 in=64 val=0.8250 sp=0.591 t=5.4s
+[34/60] mnist_d64 plain mlp seed=3 in=64 val=0.7600 sp=0.591 t=5.3s
+[35/60] mnist_d64 plain mlp seed=4 in=64 val=0.7750 sp=0.591 t=5.4s
+[36/60] mnist_d64 plain kan seed=0 in=64 val=0.6900 sp=0.591 t=23.7s
+[37/60] mnist_d64 plain kan seed=1 in=64 val=0.7250 sp=0.591 t=24.4s
+[38/60] mnist_d64 plain kan seed=2 in=64 val=0.7200 sp=0.591 t=23.8s
+[39/60] mnist_d64 plain kan seed=3 in=64 val=0.7050 sp=0.591 t=23.6s
+[40/60] mnist_d64 plain kan seed=4 in=64 val=0.6550 sp=0.591 t=23.6s
+[41/60] mnist_d64 pca mlp seed=0 in=64 val=0.8150 sp=0.591 t=5.4s
+[42/60] mnist_d64 pca mlp seed=1 in=64 val=0.7850 sp=0.591 t=5.5s
+[43/60] mnist_d64 pca mlp seed=2 in=64 val=0.8650 sp=0.591 t=5.5s
+[44/60] mnist_d64 pca mlp seed=3 in=64 val=0.7650 sp=0.591 t=5.8s
+[45/60] mnist_d64 pca mlp seed=4 in=64 val=0.7350 sp=0.591 t=5.4s
+[46/60] mnist_d64 pca kan seed=0 in=64 val=0.5550 sp=0.591 t=23.4s
+[47/60] mnist_d64 pca kan seed=1 in=64 val=0.4900 sp=0.591 t=23.6s
+[48/60] mnist_d64 pca kan seed=2 in=64 val=0.4300 sp=0.591 t=23.5s
+[49/60] mnist_d64 pca kan seed=3 in=64 val=0.4700 sp=0.591 t=24.1s
+[50/60] mnist_d64 pca kan seed=4 in=64 val=0.4250 sp=0.591 t=23.8s
+[51/60] mnist_d64 premix mlp seed=0 in=64 val=0.8400 sp=0.591 t=6.0s
+[52/60] mnist_d64 premix mlp seed=1 in=64 val=0.8450 sp=0.591 t=5.7s
+[53/60] mnist_d64 premix mlp seed=2 in=64 val=0.8550 sp=0.591 t=5.9s
+[54/60] mnist_d64 premix mlp seed=3 in=64 val=0.7750 sp=0.591 t=5.9s
+[55/60] mnist_d64 premix mlp seed=4 in=64 val=0.7850 sp=0.591 t=6.1s
+[56/60] mnist_d64 premix kan seed=0 in=64 val=0.8050 sp=0.591 t=28.7s
+[57/60] mnist_d64 premix kan seed=1 in=64 val=0.7550 sp=0.591 t=28.5s
+[58/60] mnist_d64 premix kan seed=2 in=64 val=0.7150 sp=0.591 t=28.6s
+[59/60] mnist_d64 premix kan seed=3 in=64 val=0.6600 sp=0.591 t=28.8s
+[60/60] mnist_d64 premix kan seed=4 in=64 val=0.7100 sp=0.591 t=28.1s
+
+mnist_d64    pca     kan  mean=0.4740 std=0.0473
+mnist_d64    pca     mlp  mean=0.7930 std=0.0445
+mnist_d64    plain   kan  mean=0.6990 std=0.0252
+mnist_d64    plain   mlp  mean=0.8040 std=0.0304
+mnist_d64    premix  kan  mean=0.7290 std=0.0485
+mnist_d64    premix  mlp  mean=0.8200 std=0.0332
+tabular      pca     kan  mean=0.8464 std=0.0428
+tabular      pca     mlp  mean=0.9576 std=0.0075
+tabular      plain   kan  mean=0.8680 std=0.0296
+tabular      plain   mlp  mean=0.9612 std=0.0078
+tabular      premix  kan  mean=0.9400 std=0.0115
+tabular      premix  mlp  mean=0.9546 std=0.0107

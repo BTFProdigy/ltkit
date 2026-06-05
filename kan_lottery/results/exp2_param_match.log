@@ -1,0 +1,48 @@
+
+=== task=modular_n11 in=2 out=11 ===
+  kan: dims=[2, 30, 10, 11] params=3392
+  mlp_narrow: dims=[2, 30, 10, 11] params=991
+  mlp_wide: dims=[2, 80, 16, 11] params=3339
+  [modular_n11] kan seed=0 val=0.2500 sp=0.594 t=2.5s
+  [modular_n11] mlp_narrow seed=0 val=0.0417 sp=0.594 t=0.8s
+  [modular_n11] mlp_wide seed=0 val=0.0417 sp=0.591 t=0.8s
+  [modular_n11] kan seed=1 val=0.2083 sp=0.594 t=1.7s
+  [modular_n11] mlp_narrow seed=1 val=0.0000 sp=0.398 t=0.8s
+  [modular_n11] mlp_wide seed=1 val=0.0417 sp=0.385 t=0.8s
+  [modular_n11] kan seed=2 val=0.1667 sp=0.594 t=1.7s
+  [modular_n11] mlp_narrow seed=2 val=0.0000 sp=0.594 t=0.8s
+  [modular_n11] mlp_wide seed=2 val=0.0000 sp=0.591 t=0.8s
+  [modular_n11] kan seed=3 val=0.2083 sp=0.594 t=1.7s
+  [modular_n11] mlp_narrow seed=3 val=0.0417 sp=0.594 t=0.8s
+  [modular_n11] mlp_wide seed=3 val=0.0417 sp=0.558 t=0.8s
+  [modular_n11] kan seed=4 val=0.0833 sp=0.594 t=1.7s
+  [modular_n11] mlp_narrow seed=4 val=0.0000 sp=0.594 t=0.8s
+  [modular_n11] mlp_wide seed=4 val=0.0417 sp=0.591 t=0.8s
+
+=== task=mnist_d64 in=64 out=10 ===
+  kan: dims=[64, 64, 32, 10] params=45460
+  mlp_narrow: dims=[64, 64, 32, 10] params=13034
+  mlp_wide: dims=[64, 232, 32, 10] params=45458
+  [mnist_d64] kan seed=0 val=0.6900 sp=0.591 t=23.1s
+  [mnist_d64] mlp_narrow seed=0 val=0.8350 sp=0.591 t=5.4s
+  [mnist_d64] mlp_wide seed=0 val=0.8550 sp=0.590 t=6.6s
+  [mnist_d64] kan seed=1 val=0.7250 sp=0.591 t=23.4s
+  [mnist_d64] mlp_narrow seed=1 val=0.8250 sp=0.591 t=5.4s
+  [mnist_d64] mlp_wide seed=1 val=0.8350 sp=0.590 t=6.5s
+  [mnist_d64] kan seed=2 val=0.7200 sp=0.591 t=23.4s
+  [mnist_d64] mlp_narrow seed=2 val=0.8250 sp=0.591 t=5.3s
+  [mnist_d64] mlp_wide seed=2 val=0.8300 sp=0.590 t=6.2s
+  [mnist_d64] kan seed=3 val=0.7050 sp=0.591 t=23.1s
+  [mnist_d64] mlp_narrow seed=3 val=0.7600 sp=0.591 t=5.3s
+  [mnist_d64] mlp_wide seed=3 val=0.7650 sp=0.590 t=6.3s
+  [mnist_d64] kan seed=4 val=0.6550 sp=0.591 t=24.0s
+  [mnist_d64] mlp_narrow seed=4 val=0.7750 sp=0.591 t=5.5s
+  [mnist_d64] mlp_wide seed=4 val=0.7950 sp=0.590 t=6.8s
+
+--- SUMMARY ---
+mnist_d64       kan        mean=0.6990 std=0.0252
+mnist_d64       mlp_narrow mean=0.8040 std=0.0304
+mnist_d64       mlp_wide   mean=0.8160 std=0.0320
+modular_n11     kan        mean=0.1833 std=0.0565
+modular_n11     mlp_narrow mean=0.0167 std=0.0204
+modular_n11     mlp_wide   mean=0.0333 std=0.0167

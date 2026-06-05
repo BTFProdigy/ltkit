@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# Rust
+/ltkit/rust/target/
+target/
+
+# Codex skeleton cache
+.codex-cache/
+
+# Archives / large blobs
+*.zip
+
+# OS / editor
+.DS_Store
+*.swp

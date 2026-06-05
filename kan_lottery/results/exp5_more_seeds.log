@@ -1,0 +1,45 @@
+[1/40] parity mlp seed=5 val=0.9531 sp=0.594 t=2.5s
+[2/40] parity mlp seed=6 val=0.9375 sp=0.594 t=1.6s
+[3/40] parity mlp seed=7 val=0.9844 sp=0.594 t=1.6s
+[4/40] parity mlp seed=8 val=1.0000 sp=0.594 t=1.7s
+[5/40] parity mlp seed=9 val=1.0000 sp=0.594 t=1.6s
+[6/40] parity mlp seed=10 val=1.0000 sp=0.594 t=1.6s
+[7/40] parity mlp seed=11 val=1.0000 sp=0.594 t=1.6s
+[8/40] parity mlp seed=12 val=0.9219 sp=0.594 t=1.7s
+[9/40] parity mlp seed=13 val=0.8594 sp=0.594 t=1.6s
+[10/40] parity mlp seed=14 val=0.9688 sp=0.594 t=1.6s
+[11/40] parity kan seed=5 val=1.0000 sp=0.594 t=3.7s
+[12/40] parity kan seed=6 val=1.0000 sp=0.594 t=3.7s
+[13/40] parity kan seed=7 val=1.0000 sp=0.594 t=3.7s
+[14/40] parity kan seed=8 val=1.0000 sp=0.594 t=3.7s
+[15/40] parity kan seed=9 val=1.0000 sp=0.594 t=3.6s
+[16/40] parity kan seed=10 val=1.0000 sp=0.594 t=3.6s
+[17/40] parity kan seed=11 val=1.0000 sp=0.594 t=4.3s
+[18/40] parity kan seed=12 val=1.0000 sp=0.594 t=3.8s
+[19/40] parity kan seed=13 val=1.0000 sp=0.594 t=4.3s
+[20/40] parity kan seed=14 val=1.0000 sp=0.594 t=4.4s
+[21/40] mnist_d256 mlp seed=5 val=0.8200 sp=0.590 t=6.2s
+[22/40] mnist_d256 mlp seed=6 val=0.8000 sp=0.590 t=6.1s
+[23/40] mnist_d256 mlp seed=7 val=0.8150 sp=0.590 t=6.1s
+[24/40] mnist_d256 mlp seed=8 val=0.8800 sp=0.590 t=6.3s
+[25/40] mnist_d256 mlp seed=9 val=0.8050 sp=0.590 t=6.0s
+[26/40] mnist_d256 mlp seed=10 val=0.8900 sp=0.590 t=6.1s
+[27/40] mnist_d256 mlp seed=11 val=0.8400 sp=0.590 t=6.1s
+[28/40] mnist_d256 mlp seed=12 val=0.8650 sp=0.590 t=6.2s
+[29/40] mnist_d256 mlp seed=13 val=0.8700 sp=0.590 t=6.7s
+[30/40] mnist_d256 mlp seed=14 val=0.8300 sp=0.590 t=6.2s
+[31/40] mnist_d256 kan seed=5 val=0.8150 sp=0.590 t=38.9s
+[32/40] mnist_d256 kan seed=6 val=0.7650 sp=0.590 t=39.2s
+[33/40] mnist_d256 kan seed=7 val=0.7650 sp=0.590 t=38.9s
+[34/40] mnist_d256 kan seed=8 val=0.8300 sp=0.590 t=38.3s
+[35/40] mnist_d256 kan seed=9 val=0.8450 sp=0.590 t=38.6s
+[36/40] mnist_d256 kan seed=10 val=0.8650 sp=0.588 t=37.8s
+[37/40] mnist_d256 kan seed=11 val=0.8100 sp=0.590 t=37.4s
+[38/40] mnist_d256 kan seed=12 val=0.8350 sp=0.590 t=37.7s
+[39/40] mnist_d256 kan seed=13 val=0.8250 sp=0.590 t=38.2s
+[40/40] mnist_d256 kan seed=14 val=0.8200 sp=0.590 t=37.8s
+
+mnist_d256   kan  n=10 mean=0.8175 std=0.0302
+mnist_d256   mlp  n=10 mean=0.8415 std=0.0309
+parity       kan  n=10 mean=1.0000 std=0.0000
+parity       mlp  n=10 mean=0.9625 std=0.0438

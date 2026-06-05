@@ -1,0 +1,25 @@
+[1/20] basis_order=4 seed=0 val=0.8400 sp=0.588 t=30.1s
+[2/20] basis_order=4 seed=1 val=0.8350 sp=0.591 t=30.9s
+[3/20] basis_order=4 seed=2 val=0.8250 sp=0.588 t=31.4s
+[4/20] basis_order=4 seed=3 val=0.7550 sp=0.591 t=31.2s
+[5/20] basis_order=4 seed=4 val=0.7700 sp=0.580 t=32.3s
+[6/20] basis_order=6 seed=0 val=0.8300 sp=0.591 t=32.8s
+[7/20] basis_order=6 seed=1 val=0.8000 sp=0.583 t=32.9s
+[8/20] basis_order=6 seed=2 val=0.8500 sp=0.591 t=33.4s
+[9/20] basis_order=6 seed=3 val=0.7650 sp=0.591 t=32.7s
+[10/20] basis_order=6 seed=4 val=0.7450 sp=0.591 t=33.2s
+[11/20] basis_order=8 seed=0 val=0.7900 sp=0.591 t=34.1s
+[12/20] basis_order=8 seed=1 val=0.7500 sp=0.591 t=35.1s
+[13/20] basis_order=8 seed=2 val=0.7650 sp=0.591 t=33.9s
+[14/20] basis_order=8 seed=3 val=0.6900 sp=0.591 t=33.6s
+[15/20] basis_order=8 seed=4 val=0.7250 sp=0.591 t=34.3s
+[16/20] basis_order=12 seed=0 val=0.7300 sp=0.591 t=36.6s
+[17/20] basis_order=12 seed=1 val=0.7150 sp=0.591 t=36.3s
+[18/20] basis_order=12 seed=2 val=0.7000 sp=0.591 t=35.3s
+[19/20] basis_order=12 seed=3 val=0.5900 sp=0.591 t=37.8s
+[20/20] basis_order=12 seed=4 val=0.6400 sp=0.591 t=40.5s
+
+   4 mean=0.8050 std=0.0354
+   6 mean=0.7980 std=0.0391
+   8 mean=0.7440 std=0.0343
+  12 mean=0.6750 std=0.0523

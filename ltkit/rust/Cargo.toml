@@ -1,0 +1,18 @@
+[package]
+name = "ltkit"
+version = "0.1.0"
+edition = "2021"
+description = "Backend-agnostic lottery-ticket / IMP framework (Rust core)"
+
+[features]
+default = []
+# candle backend is optional so the pure-Rust core compiles with zero heavy deps
+candle = ["dep:candle-core", "dep:candle-nn"]
+
+[dependencies]
+candle-core = { version = "0.8", optional = true }
+candle-nn = { version = "0.8", optional = true }
+
+[lib]
+name = "ltkit"
+path = "src/lib.rs"

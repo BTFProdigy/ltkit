@@ -1,0 +1,360 @@
+{
+  "matched_sparsity": [
+    {
+      "model": "kan",
+      "task": "mnist",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.590625,
+      "jaccard_mean": 0.2571250191647872,
+      "kappa_mean": -0.000760468864136459
+    },
+    {
+      "model": "kan",
+      "task": "modular",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.5951219512195122,
+      "jaccard_mean": 0.24514015309243037,
+      "kappa_mean": -0.023380406873395244
+    },
+    {
+      "model": "kan",
+      "task": "parity",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.5936170212765958,
+      "jaccard_mean": 0.25935849120313426,
+      "kappa_mean": 0.006886974797800619
+    },
+    {
+      "model": "kan",
+      "task": "parity",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.9863829787234042,
+      "jaccard_mean": 0.053636363636363635,
+      "kappa_mean": 0.08242434677560459
+    },
+    {
+      "model": "kan",
+      "task": "pde",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.9882242990654205,
+      "jaccard_mean": 0.19378802014156704,
+      "kappa_mean": 0.3108620706752428
+    },
+    {
+      "model": "kan",
+      "task": "symbolic",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.962803738317757,
+      "jaccard_mean": 0.22282992561989343,
+      "kappa_mean": 0.3371033974361199
+    },
+    {
+      "model": "kan",
+      "task": "xor",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.5947368421052632,
+      "jaccard_mean": 0.2604309103420331,
+      "kappa_mean": 0.005344213308814995
+    },
+    {
+      "model": "kan",
+      "task": "xor",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.99,
+      "jaccard_mean": 0.07678571428571428,
+      "kappa_mean": 0.11723616762232969
+    },
+    {
+      "model": "mlp",
+      "task": "mnist",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.5906559405940595,
+      "jaccard_mean": 0.262413978660625,
+      "kappa_mean": 0.010669831054475148
+    },
+    {
+      "model": "mlp",
+      "task": "modular",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.46048780487804875,
+      "jaccard_mean": 0.3736766238192481,
+      "kappa_mean": 0.03223777418346594
+    },
+    {
+      "model": "mlp",
+      "task": "parity",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.5936170212765958,
+      "jaccard_mean": 0.257791415550815,
+      "kappa_mean": 0.0024770590553397044
+    },
+    {
+      "model": "mlp",
+      "task": "parity",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.7536170212765956,
+      "jaccard_mean": 0.20962830065082344,
+      "kappa_mean": 0.13225552311687108
+    },
+    {
+      "model": "mlp",
+      "task": "pde",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.9654205607476636,
+      "jaccard_mean": 0.09695434688220206,
+      "kappa_mean": 0.1458458777192108
+    },
+    {
+      "model": "mlp",
+      "task": "symbolic",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.948785046728972,
+      "jaccard_mean": 0.10865220248835146,
+      "kappa_mean": 0.15188150266717143
+    },
+    {
+      "model": "mlp",
+      "task": "xor",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_sparsity": 0.49789473684210533,
+      "jaccard_mean": 0.30430606070293365,
+      "kappa_mean": -0.04287342229756064
+    },
+    {
+      "model": "mlp",
+      "task": "xor",
+      "pruning": "online",
+      "n": 5,
+      "mean_sparsity": 0.8926315789473683,
+      "jaccard_mean": 0.13073202249331,
+      "kappa_mean": 0.1358900311432393
+    }
+  ],
+  "bootstrap_ci": [
+    {
+      "model": "kan",
+      "task": "mnist",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.6990000009536743,
+      "ci_lo": 0.6759999871253968,
+      "ci_hi": 0.7190000176429748
+    },
+    {
+      "model": "kan",
+      "task": "modular",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.9620000004768372,
+      "ci_lo": 0.8860000014305115,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "kan",
+      "task": "parity",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.996875,
+      "ci_lo": 0.990625,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "kan",
+      "task": "parity",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "kan",
+      "task": "pde",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 0.002133321430301294,
+      "ci_lo": 0.0007155842729844152,
+      "ci_hi": 0.0039628749655094
+    },
+    {
+      "model": "kan",
+      "task": "symbolic",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 0.0016642867354676127,
+      "ci_lo": 0.0012535180896520615,
+      "ci_hi": 0.0020621753530576823
+    },
+    {
+      "model": "kan",
+      "task": "xor",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "kan",
+      "task": "xor",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "mlp",
+      "task": "mnist",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.8039999842643738,
+      "ci_lo": 0.7759999871253968,
+      "ci_hi": 0.8289999842643738
+    },
+    {
+      "model": "mlp",
+      "task": "modular",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.4160000026226044,
+      "ci_lo": 0.27799999713897705,
+      "ci_hi": 0.6420000076293946
+    },
+    {
+      "model": "mlp",
+      "task": "parity",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 0.928125,
+      "ci_lo": 0.8375,
+      "ci_hi": 0.984375
+    },
+    {
+      "model": "mlp",
+      "task": "parity",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "mlp",
+      "task": "pde",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 0.013752397894859315,
+      "ci_lo": 0.010969996824860573,
+      "ci_hi": 0.017608968168497087
+    },
+    {
+      "model": "mlp",
+      "task": "symbolic",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 0.007986954599618911,
+      "ci_lo": 0.006046728789806366,
+      "ci_hi": 0.010652580950409173
+    },
+    {
+      "model": "mlp",
+      "task": "xor",
+      "pruning": "iterative",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    },
+    {
+      "model": "mlp",
+      "task": "xor",
+      "pruning": "online",
+      "n": 5,
+      "mean_final_val": 1.0,
+      "ci_lo": 1.0,
+      "ci_hi": 1.0
+    }
+  ],
+  "kan_minus_mlp_deltas": [
+    {
+      "task": "mnist",
+      "pruning": "iterative",
+      "delta_mean": -0.10499998331069949,
+      "ci_lo": -0.13999998569488525,
+      "ci_hi": -0.07099996805191033,
+      "significant": true
+    },
+    {
+      "task": "modular",
+      "pruning": "iterative",
+      "delta_mean": 0.5459999978542328,
+      "ci_lo": 0.3119499944150448,
+      "ci_hi": 0.7100000023841858,
+      "significant": true
+    },
+    {
+      "task": "parity",
+      "pruning": "iterative",
+      "delta_mean": 0.06874999999999998,
+      "ci_lo": 0.012499999999999956,
+      "ci_hi": 0.15937500000000004,
+      "significant": true
+    },
+    {
+      "task": "parity",
+      "pruning": "online",
+      "delta_mean": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "significant": false
+    },
+    {
+      "task": "pde",
+      "pruning": "online",
+      "delta_mean": -0.011619076464558021,
+      "ci_lo": -0.0157118805043865,
+      "ci_hi": -0.008222363351960667,
+      "significant": true
+    },
+    {
+      "task": "symbolic",
+      "pruning": "online",
+      "delta_mean": -0.006322667864151298,
+      "ci_lo": -0.00895023422781378,
+      "ci_hi": -0.004334720327751711,
+      "significant": true
+    },
+    {
+      "task": "xor",
+      "pruning": "iterative",
+      "delta_mean": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "significant": false
+    },
+    {
+      "task": "xor",
+      "pruning": "online",
+      "delta_mean": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "significant": false
+    }
+  ]
+}

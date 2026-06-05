@@ -1,0 +1,25 @@
+[1/20] noimp mlp seed=0 val=0.8950 sp=0.200 t=10.0s
+[2/20] noimp mlp seed=1 val=0.8350 sp=0.200 t=10.2s
+[3/20] noimp mlp seed=2 val=0.8800 sp=0.200 t=9.9s
+[4/20] noimp mlp seed=3 val=0.8100 sp=0.200 t=9.8s
+[5/20] noimp mlp seed=4 val=0.8000 sp=0.200 t=9.7s
+[6/20] noimp kan seed=0 val=0.7550 sp=0.200 t=33.6s
+[7/20] noimp kan seed=1 val=0.7700 sp=0.200 t=32.5s
+[8/20] noimp kan seed=2 val=0.8400 sp=0.200 t=32.4s
+[9/20] noimp kan seed=3 val=0.7800 sp=0.200 t=32.2s
+[10/20] noimp kan seed=4 val=0.7450 sp=0.200 t=33.0s
+[11/20] imp mlp seed=0 val=0.8800 sp=0.591 t=9.8s
+[12/20] imp mlp seed=1 val=0.8600 sp=0.591 t=9.6s
+[13/20] imp mlp seed=2 val=0.8900 sp=0.591 t=10.4s
+[14/20] imp mlp seed=3 val=0.7950 sp=0.591 t=11.0s
+[15/20] imp mlp seed=4 val=0.8000 sp=0.591 t=10.2s
+[16/20] imp kan seed=0 val=0.7600 sp=0.591 t=32.5s
+[17/20] imp kan seed=1 val=0.8100 sp=0.591 t=33.0s
+[18/20] imp kan seed=2 val=0.8150 sp=0.591 t=33.2s
+[19/20] imp kan seed=3 val=0.7500 sp=0.591 t=33.1s
+[20/20] imp kan seed=4 val=0.7400 sp=0.591 t=33.0s
+
+imp    kan  mean=0.7750 std=0.0313
+imp    mlp  mean=0.8450 std=0.0400
+noimp  kan  mean=0.7780 std=0.0333
+noimp  mlp  mean=0.8440 std=0.0376

@@ -1,0 +1,163 @@
+============================================================
+  KAN Lottery Ticket – Experiment Runner
+  mode: full
+============================================================
+
+[EXP 1] model=mlp task=xor pruning=iterative
+  seed=0  val=1.0000  sp=0.363
+  seed=1  val=1.0000  sp=0.342
+  seed=2  val=1.0000  sp=0.595
+  seed=3  val=1.0000  sp=0.595
+  seed=4  val=1.0000  sp=0.595
+  → mean Jaccard=0.3043  elapsed=5.8s
+
+[EXP 1] model=mlp task=parity pruning=iterative
+  seed=0  val=0.9688  sp=0.594
+  seed=1  val=0.9531  sp=0.594
+  seed=2  val=0.9688  sp=0.594
+  seed=3  val=1.0000  sp=0.594
+  seed=4  val=0.7500  sp=0.594
+  → mean Jaccard=0.2578  elapsed=7.8s
+
+[EXP 1] model=mlp task=modular pruning=iterative
+  seed=0  val=0.8600  sp=0.593
+  seed=1  val=0.3100  sp=0.366
+  seed=2  val=0.2800  sp=0.378
+  seed=3  val=0.3700  sp=0.595
+  seed=4  val=0.2600  sp=0.371
+  → mean Jaccard=0.3737  elapsed=12.3s
+
+[EXP 2] model=kan task=xor pruning=iterative
+  seed=0  val=1.0000  sp=0.595
+  seed=1  val=1.0000  sp=0.595
+  seed=2  val=1.0000  sp=0.595
+  seed=3  val=1.0000  sp=0.595
+  seed=4  val=1.0000  sp=0.595
+  → mean Jaccard=0.2604  elapsed=10.9s
+
+[EXP 2] model=kan task=parity pruning=iterative
+  seed=0  val=1.0000  sp=0.594
+  seed=1  val=1.0000  sp=0.594
+  seed=2  val=1.0000  sp=0.594
+  seed=3  val=0.9844  sp=0.594
+  seed=4  val=1.0000  sp=0.594
+  → mean Jaccard=0.2594  elapsed=17.5s
+
+[EXP 2] model=kan task=modular pruning=iterative
+  seed=0  val=1.0000  sp=0.595
+  seed=1  val=0.8100  sp=0.595
+  seed=2  val=1.0000  sp=0.595
+  seed=3  val=1.0000  sp=0.595
+  seed=4  val=1.0000  sp=0.595
+  → mean Jaccard=0.2451  elapsed=29.3s
+
+[EXP 3] model=mlp task=symbolic pruning=online
+  seed=0  val=0.0065  sp=0.946
+  seed=1  val=0.0057  sp=0.948
+  seed=2  val=0.0086  sp=0.952
+  seed=3  val=0.0130  sp=0.950
+  seed=4  val=0.0062  sp=0.948
+  → mean Jaccard=0.1087  elapsed=8.7s
+
+[EXP 3] model=mlp task=pde pruning=online
+  seed=0  val=0.0126  sp=0.963
+  seed=1  val=0.0096  sp=0.966
+  seed=2  val=0.0122  sp=0.969
+  seed=3  val=0.0209  sp=0.967
+  seed=4  val=0.0134  sp=0.962
+  → mean Jaccard=0.0970  elapsed=8.7s
+
+[EXP 4] model=kan task=symbolic pruning=online
+  seed=0  val=0.0023  sp=0.962
+  seed=1  val=0.0010  sp=0.961
+  seed=2  val=0.0018  sp=0.964
+  seed=3  val=0.0020  sp=0.961
+  seed=4  val=0.0013  sp=0.967
+  → mean Jaccard=0.2228  elapsed=24.6s
+
+[EXP 4] model=kan task=pde pruning=online
+  seed=0  val=0.0056  sp=0.988
+  seed=1  val=0.0025  sp=0.987
+  seed=2  val=0.0004  sp=0.985
+  seed=3  val=0.0014  sp=0.989
+  seed=4  val=0.0007  sp=0.993
+  → mean Jaccard=0.1938  elapsed=24.6s
+
+[EXP 5] model=mlp task=mnist pruning=iterative
+  seed=0  val=0.8350  sp=0.591
+  seed=1  val=0.8250  sp=0.591
+  seed=2  val=0.8250  sp=0.591
+  seed=3  val=0.7600  sp=0.591
+  seed=4  val=0.7750  sp=0.591
+  → mean Jaccard=0.2624  elapsed=27.6s
+
+[EXP 6] model=kan task=mnist pruning=iterative
+  seed=0  val=0.6900  sp=0.591
+  seed=1  val=0.7250  sp=0.591
+  seed=2  val=0.7200  sp=0.591
+  seed=3  val=0.7050  sp=0.591
+  seed=4  val=0.6550  sp=0.591
+  → mean Jaccard=0.2571  elapsed=118.1s
+
+[EXP 7] model=mlp task=xor pruning=online
+  seed=0  val=1.0000  sp=0.874
+  seed=1  val=1.0000  sp=0.908
+  seed=2  val=1.0000  sp=0.895
+  seed=3  val=1.0000  sp=0.892
+  seed=4  val=1.0000  sp=0.895
+  → mean Jaccard=0.1307  elapsed=3.9s
+
+[EXP 7] model=mlp task=parity pruning=online
+  seed=0  val=1.0000  sp=0.738
+  seed=1  val=1.0000  sp=0.757
+  seed=2  val=1.0000  sp=0.751
+  seed=3  val=1.0000  sp=0.772
+  seed=4  val=1.0000  sp=0.749
+  → mean Jaccard=0.2096  elapsed=6.0s
+
+[EXP 8] model=kan task=xor pruning=online
+  seed=0  val=1.0000  sp=0.992
+  seed=1  val=1.0000  sp=0.992
+  seed=2  val=1.0000  sp=0.989
+  seed=3  val=1.0000  sp=0.987
+  seed=4  val=1.0000  sp=0.989
+  → mean Jaccard=0.0768  elapsed=8.6s
+
+[EXP 8] model=kan task=parity pruning=online
+  seed=0  val=1.0000  sp=0.994
+  seed=1  val=1.0000  sp=0.994
+  seed=2  val=1.0000  sp=0.994
+  seed=3  val=1.0000  sp=0.981
+  seed=4  val=1.0000  sp=0.970
+  → mean Jaccard=0.0536  elapsed=13.5s
+
+Results saved → /home/mk-terminal/Downloads/files (1)/kan_lottery/results/all_results.json
+
+Generating figures …
+Saved /home/mk-terminal/Downloads/files (1)/kan_lottery/results/accuracy_vs_sparsity.png
+Saved /home/mk-terminal/Downloads/files (1)/kan_lottery/results/mask_overlap_bar.png
+Saved /home/mk-terminal/Downloads/files (1)/kan_lottery/results/pruning_resilience.png
+Saved /home/mk-terminal/Downloads/files (1)/kan_lottery/results/kan_complexity.png
+
+================================================================================
+Model  Task       Pruning     Val (mean)   Sparsity   Jaccard   
+================================================================================
+kan    mnist      iterative   0.6990       0.5906     0.2571    
+kan    modular    iterative   0.9620       0.5951     0.2451    
+kan    parity     iterative   0.9969       0.5936     0.2594    
+kan    parity     online      1.0000       0.9864     0.0536    
+kan    pde        online      0.0021       0.9882     0.1938    
+kan    symbolic   online      0.0017       0.9628     0.2228    
+kan    xor        iterative   1.0000       0.5947     0.2604    
+kan    xor        online      1.0000       0.9900     0.0768    
+mlp    mnist      iterative   0.8040       0.5907     0.2624    
+mlp    modular    iterative   0.4160       0.4605     0.3737    
+mlp    parity     iterative   0.9281       0.5936     0.2578    
+mlp    parity     online      1.0000       0.7536     0.2096    
+mlp    pde        online      0.0138       0.9654     0.0970    
+mlp    symbolic   online      0.0080       0.9488     0.1087    
+mlp    xor        iterative   1.0000       0.4979     0.3043    
+mlp    xor        online      1.0000       0.8926     0.1307    
+================================================================================
+
+Done. Results and figures in kan_lottery/results/

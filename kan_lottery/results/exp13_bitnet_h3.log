@@ -1,0 +1,13 @@
+[1/10] quant=soft seed=0 val=0.7600 sp=0.591 t=32.4s
+[2/10] quant=soft seed=1 val=0.8100 sp=0.591 t=31.7s
+[3/10] quant=soft seed=2 val=0.8150 sp=0.591 t=32.3s
+[4/10] quant=soft seed=3 val=0.7500 sp=0.591 t=32.3s
+[5/10] quant=soft seed=4 val=0.7400 sp=0.591 t=32.7s
+[6/10] quant=bitnet seed=0 val=0.8300 sp=0.591 t=33.2s
+[7/10] quant=bitnet seed=1 val=0.8000 sp=0.583 t=32.9s
+[8/10] quant=bitnet seed=2 val=0.8500 sp=0.591 t=33.0s
+[9/10] quant=bitnet seed=3 val=0.7650 sp=0.591 t=33.1s
+[10/10] quant=bitnet seed=4 val=0.7450 sp=0.591 t=33.4s
+
+bitnet mean=0.7980 std=0.0391
+soft mean=0.7750 std=0.0313

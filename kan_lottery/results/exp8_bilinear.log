@@ -1,0 +1,73 @@
+[1/60] feynman plain mlp seed=0 in=10 val=0.0184 sp=0.978 t=4.3s
+[2/60] feynman plain mlp seed=1 in=10 val=0.0219 sp=0.975 t=3.4s
+[3/60] feynman plain mlp seed=2 in=10 val=0.0174 sp=0.976 t=3.4s
+[4/60] feynman plain mlp seed=3 in=10 val=0.0231 sp=0.975 t=3.5s
+[5/60] feynman plain mlp seed=4 in=10 val=0.0142 sp=0.976 t=3.4s
+[6/60] feynman plain kan seed=0 in=10 val=0.0573 sp=0.995 t=10.0s
+[7/60] feynman plain kan seed=1 in=10 val=0.0394 sp=0.995 t=10.1s
+[8/60] feynman plain kan seed=2 in=10 val=0.0212 sp=0.997 t=10.1s
+[9/60] feynman plain kan seed=3 in=10 val=0.0174 sp=0.995 t=10.1s
+[10/60] feynman plain kan seed=4 in=10 val=0.1175 sp=0.991 t=10.3s
+[11/60] feynman bilinear mlp seed=0 in=55 val=0.0148 sp=0.995 t=3.7s
+[12/60] feynman bilinear mlp seed=1 in=55 val=0.0199 sp=0.995 t=3.7s
+[13/60] feynman bilinear mlp seed=2 in=55 val=0.0341 sp=0.996 t=3.7s
+[14/60] feynman bilinear mlp seed=3 in=55 val=0.0255 sp=0.995 t=3.7s
+[15/60] feynman bilinear mlp seed=4 in=55 val=0.0119 sp=0.995 t=3.7s
+[16/60] feynman bilinear kan seed=0 in=55 val=0.0062 sp=0.998 t=12.6s
+[17/60] feynman bilinear kan seed=1 in=55 val=0.0088 sp=0.999 t=12.7s
+[18/60] feynman bilinear kan seed=2 in=55 val=0.0043 sp=0.998 t=12.6s
+[19/60] feynman bilinear kan seed=3 in=55 val=0.0051 sp=0.999 t=12.7s
+[20/60] feynman bilinear kan seed=4 in=55 val=0.0059 sp=0.999 t=12.6s
+[21/60] tabular plain mlp seed=0 in=50 val=0.9490 sp=0.591 t=25.5s
+[22/60] tabular plain mlp seed=1 in=50 val=0.9700 sp=0.591 t=25.3s
+[23/60] tabular plain mlp seed=2 in=50 val=0.9560 sp=0.591 t=25.3s
+[24/60] tabular plain mlp seed=3 in=50 val=0.9680 sp=0.591 t=25.1s
+[25/60] tabular plain mlp seed=4 in=50 val=0.9630 sp=0.591 t=24.9s
+[26/60] tabular plain kan seed=0 in=50 val=0.8250 sp=0.591 t=94.5s
+[27/60] tabular plain kan seed=1 in=50 val=0.9130 sp=0.591 t=94.4s
+[28/60] tabular plain kan seed=2 in=50 val=0.8810 sp=0.591 t=94.1s
+[29/60] tabular plain kan seed=3 in=50 val=0.8710 sp=0.591 t=93.3s
+[30/60] tabular plain kan seed=4 in=50 val=0.8500 sp=0.591 t=94.0s
+[31/60] tabular bilinear mlp seed=0 in=114 val=0.9430 sp=0.591 t=27.0s
+[32/60] tabular bilinear mlp seed=1 in=114 val=0.9680 sp=0.591 t=26.7s
+[33/60] tabular bilinear mlp seed=2 in=114 val=0.9430 sp=0.591 t=27.7s
+[34/60] tabular bilinear mlp seed=3 in=114 val=0.9590 sp=0.591 t=27.6s
+[35/60] tabular bilinear mlp seed=4 in=114 val=0.9600 sp=0.591 t=27.2s
+[36/60] tabular bilinear kan seed=0 in=114 val=0.8130 sp=0.590 t=117.9s
+[37/60] tabular bilinear kan seed=1 in=114 val=0.8960 sp=0.591 t=119.6s
+[38/60] tabular bilinear kan seed=2 in=114 val=0.8600 sp=0.591 t=118.6s
+[39/60] tabular bilinear kan seed=3 in=114 val=0.8770 sp=0.590 t=120.0s
+[40/60] tabular bilinear kan seed=4 in=114 val=0.8190 sp=0.591 t=116.8s
+[41/60] mnist_d64 plain mlp seed=0 in=64 val=0.8350 sp=0.591 t=5.6s
+[42/60] mnist_d64 plain mlp seed=1 in=64 val=0.8250 sp=0.591 t=5.3s
+[43/60] mnist_d64 plain mlp seed=2 in=64 val=0.8250 sp=0.591 t=5.5s
+[44/60] mnist_d64 plain mlp seed=3 in=64 val=0.7600 sp=0.591 t=5.2s
+[45/60] mnist_d64 plain mlp seed=4 in=64 val=0.7750 sp=0.591 t=5.3s
+[46/60] mnist_d64 plain kan seed=0 in=64 val=0.6900 sp=0.591 t=22.7s
+[47/60] mnist_d64 plain kan seed=1 in=64 val=0.7250 sp=0.591 t=22.3s
+[48/60] mnist_d64 plain kan seed=2 in=64 val=0.7200 sp=0.591 t=22.0s
+[49/60] mnist_d64 plain kan seed=3 in=64 val=0.7050 sp=0.591 t=22.0s
+[50/60] mnist_d64 plain kan seed=4 in=64 val=0.6550 sp=0.591 t=22.2s
+[51/60] mnist_d64 bilinear mlp seed=0 in=128 val=0.7000 sp=0.591 t=5.5s
+[52/60] mnist_d64 bilinear mlp seed=1 in=128 val=0.6700 sp=0.591 t=5.6s
+[53/60] mnist_d64 bilinear mlp seed=2 in=128 val=0.7100 sp=0.591 t=5.5s
+[54/60] mnist_d64 bilinear mlp seed=3 in=128 val=0.6200 sp=0.591 t=5.5s
+[55/60] mnist_d64 bilinear mlp seed=4 in=128 val=0.6200 sp=0.591 t=5.5s
+[56/60] mnist_d64 bilinear kan seed=0 in=128 val=0.6500 sp=0.591 t=27.2s
+[57/60] mnist_d64 bilinear kan seed=1 in=128 val=0.6800 sp=0.591 t=27.3s
+[58/60] mnist_d64 bilinear kan seed=2 in=128 val=0.6400 sp=0.591 t=27.8s
+[59/60] mnist_d64 bilinear kan seed=3 in=128 val=0.5750 sp=0.591 t=27.8s
+[60/60] mnist_d64 bilinear kan seed=4 in=128 val=0.6150 sp=0.591 t=27.4s
+
+feynman      bilinear  kan  mean=0.0061 std=0.0015
+feynman      bilinear  mlp  mean=0.0213 std=0.0079
+feynman      plain     kan  mean=0.0505 std=0.0364
+feynman      plain     mlp  mean=0.0190 std=0.0032
+mnist_d64    bilinear  kan  mean=0.6320 std=0.0353
+mnist_d64    bilinear  mlp  mean=0.6640 std=0.0383
+mnist_d64    plain     kan  mean=0.6990 std=0.0252
+mnist_d64    plain     mlp  mean=0.8040 std=0.0304
+tabular      bilinear  kan  mean=0.8530 std=0.0323
+tabular      bilinear  mlp  mean=0.9546 std=0.0100
+tabular      plain     kan  mean=0.8680 std=0.0296
+tabular      plain     mlp  mean=0.9612 std=0.0078

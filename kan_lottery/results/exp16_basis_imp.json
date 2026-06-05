@@ -1,0 +1,107 @@
+[
+  {
+    "regime": "edge_only",
+    "seed": 0,
+    "final_val": 0.8299999833106995,
+    "coeff_sparsity": 0.5906559405940595,
+    "elapsed_s": 34.48085284233093
+  },
+  {
+    "regime": "edge_only",
+    "seed": 1,
+    "final_val": 0.800000011920929,
+    "coeff_sparsity": 0.5827660891089108,
+    "elapsed_s": 36.46649408340454
+  },
+  {
+    "regime": "edge_only",
+    "seed": 2,
+    "final_val": 0.8500000238418579,
+    "coeff_sparsity": 0.5906559405940595,
+    "elapsed_s": 33.54975938796997
+  },
+  {
+    "regime": "edge_only",
+    "seed": 3,
+    "final_val": 0.7649999856948853,
+    "coeff_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.675883531570435
+  },
+  {
+    "regime": "edge_only",
+    "seed": 4,
+    "final_val": 0.7450000047683716,
+    "coeff_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.911112546920776
+  },
+  {
+    "regime": "basis_only",
+    "seed": 0,
+    "final_val": 0.7799999713897705,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.25948667526245
+  },
+  {
+    "regime": "basis_only",
+    "seed": 1,
+    "final_val": 0.7300000190734863,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.722756147384644
+  },
+  {
+    "regime": "basis_only",
+    "seed": 2,
+    "final_val": 0.7649999856948853,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.05360412597656
+  },
+  {
+    "regime": "basis_only",
+    "seed": 3,
+    "final_val": 0.7350000143051147,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 32.853416442871094
+  },
+  {
+    "regime": "basis_only",
+    "seed": 4,
+    "final_val": 0.7450000047683716,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.329583168029785
+  },
+  {
+    "regime": "both",
+    "seed": 0,
+    "final_val": 0.8199999928474426,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.58379817008972
+  },
+  {
+    "regime": "both",
+    "seed": 1,
+    "final_val": 0.8149999976158142,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.626816272735596
+  },
+  {
+    "regime": "both",
+    "seed": 2,
+    "final_val": 0.7599999904632568,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 33.039947271347046
+  },
+  {
+    "regime": "both",
+    "seed": 3,
+    "final_val": 0.7049999833106995,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 32.287068605422974
+  },
+  {
+    "regime": "both",
+    "seed": 4,
+    "final_val": 0.7350000143051147,
+    "coeff_sparsity": 0.5904238861386139,
+    "elapsed_s": 32.25871276855469
+  }
+]

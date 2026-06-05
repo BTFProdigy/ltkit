@@ -1,0 +1,49 @@
+[1/40] tabular orth_id kan seed=0 in=50 rot=50 val=0.9040 sp=0.591 t=140.3s
+[2/40] tabular orth_id kan seed=1 in=50 rot=50 val=0.9510 sp=0.591 t=147.9s
+[3/40] tabular orth_id kan seed=2 in=50 rot=50 val=0.9280 sp=0.591 t=137.4s
+[4/40] tabular orth_id kan seed=3 in=50 rot=50 val=0.9550 sp=0.591 t=137.5s
+[5/40] tabular orth_id kan seed=4 in=50 rot=50 val=0.9520 sp=0.591 t=135.3s
+[6/40] tabular orth_pca kan seed=0 in=50 rot=50 val=0.9390 sp=0.591 t=136.7s
+[7/40] tabular orth_pca kan seed=1 in=50 rot=50 val=0.9570 sp=0.591 t=143.7s
+[8/40] tabular orth_pca kan seed=2 in=50 rot=50 val=0.9250 sp=0.591 t=140.7s
+[9/40] tabular orth_pca kan seed=3 in=50 rot=50 val=0.9430 sp=0.591 t=138.0s
+[10/40] tabular orth_pca kan seed=4 in=50 rot=50 val=0.9490 sp=0.591 t=136.9s
+[11/40] tabular lowrank20 kan seed=0 in=50 rot=20 val=0.9090 sp=0.591 t=95.6s
+[12/40] tabular lowrank20 kan seed=1 in=50 rot=20 val=0.9560 sp=0.591 t=103.4s
+[13/40] tabular lowrank20 kan seed=2 in=50 rot=20 val=0.9260 sp=0.591 t=99.9s
+[14/40] tabular lowrank20 kan seed=3 in=50 rot=20 val=0.9310 sp=0.591 t=99.3s
+[15/40] tabular lowrank20 kan seed=4 in=50 rot=20 val=0.9260 sp=0.591 t=95.9s
+[16/40] tabular dense_tern kan seed=0 in=50 rot=50 val=0.9330 sp=0.591 t=116.6s
+[17/40] tabular dense_tern kan seed=1 in=50 rot=50 val=0.9530 sp=0.591 t=118.6s
+[18/40] tabular dense_tern kan seed=2 in=50 rot=50 val=0.9370 sp=0.591 t=117.8s
+[19/40] tabular dense_tern kan seed=3 in=50 rot=50 val=0.9310 sp=0.591 t=118.9s
+[20/40] tabular dense_tern kan seed=4 in=50 rot=50 val=0.9440 sp=0.591 t=118.1s
+[21/40] mnist_d64 orth_id kan seed=0 in=64 rot=64 val=0.7600 sp=0.591 t=31.8s
+[22/40] mnist_d64 orth_id kan seed=1 in=64 rot=64 val=0.8100 sp=0.591 t=31.8s
+[23/40] mnist_d64 orth_id kan seed=2 in=64 rot=64 val=0.8150 sp=0.591 t=35.7s
+[24/40] mnist_d64 orth_id kan seed=3 in=64 rot=64 val=0.7500 sp=0.591 t=35.7s
+[25/40] mnist_d64 orth_id kan seed=4 in=64 rot=64 val=0.7400 sp=0.591 t=35.7s
+[26/40] mnist_d64 orth_pca kan seed=0 in=64 rot=64 val=0.7600 sp=0.591 t=36.2s
+[27/40] mnist_d64 orth_pca kan seed=1 in=64 rot=64 val=0.7700 sp=0.591 t=36.1s
+[28/40] mnist_d64 orth_pca kan seed=2 in=64 rot=64 val=0.8250 sp=0.591 t=35.3s
+[29/40] mnist_d64 orth_pca kan seed=3 in=64 rot=64 val=0.6850 sp=0.591 t=36.1s
+[30/40] mnist_d64 orth_pca kan seed=4 in=64 rot=64 val=0.7200 sp=0.591 t=35.0s
+[31/40] mnist_d64 lowrank20 kan seed=0 in=64 rot=20 val=0.7350 sp=0.591 t=25.1s
+[32/40] mnist_d64 lowrank20 kan seed=1 in=64 rot=20 val=0.7200 sp=0.591 t=24.8s
+[33/40] mnist_d64 lowrank20 kan seed=2 in=64 rot=20 val=0.7400 sp=0.591 t=24.5s
+[34/40] mnist_d64 lowrank20 kan seed=3 in=64 rot=20 val=0.6650 sp=0.591 t=23.9s
+[35/40] mnist_d64 lowrank20 kan seed=4 in=64 rot=20 val=0.6200 sp=0.591 t=24.3s
+[36/40] mnist_d64 dense_tern kan seed=0 in=64 rot=64 val=0.7750 sp=0.591 t=31.5s
+[37/40] mnist_d64 dense_tern kan seed=1 in=64 rot=64 val=0.7600 sp=0.591 t=30.8s
+[38/40] mnist_d64 dense_tern kan seed=2 in=64 rot=64 val=0.7950 sp=0.591 t=31.2s
+[39/40] mnist_d64 dense_tern kan seed=3 in=64 rot=64 val=0.7100 sp=0.591 t=31.2s
+[40/40] mnist_d64 dense_tern kan seed=4 in=64 rot=64 val=0.7350 sp=0.591 t=31.1s
+
+mnist_d64    dense_tern  kan  mean=0.7550 std=0.0298
+mnist_d64    lowrank20   kan  mean=0.6960 std=0.0464
+mnist_d64    orth_id     kan  mean=0.7750 std=0.0313
+mnist_d64    orth_pca    kan  mean=0.7520 std=0.0474
+tabular      dense_tern  kan  mean=0.9396 std=0.0080
+tabular      lowrank20   kan  mean=0.9296 std=0.0152
+tabular      orth_id     kan  mean=0.9380 std=0.0195
+tabular      orth_pca    kan  mean=0.9426 std=0.0107

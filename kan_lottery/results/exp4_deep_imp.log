@@ -1,0 +1,25 @@
+[1/20] parity mlp seed=0 val_final=0.7031 sp_final=0.834 t=3.8s
+[2/20] parity mlp seed=1 val_final=0.8281 sp_final=0.834 t=3.0s
+[3/20] parity mlp seed=2 val_final=0.8281 sp_final=0.834 t=3.0s
+[4/20] parity mlp seed=3 val_final=0.7656 sp_final=0.834 t=3.1s
+[5/20] parity mlp seed=4 val_final=0.6250 sp_final=0.834 t=3.0s
+[6/20] parity kan seed=0 val_final=0.6719 sp_final=0.834 t=6.8s
+[7/20] parity kan seed=1 val_final=1.0000 sp_final=0.834 t=6.9s
+[8/20] parity kan seed=2 val_final=1.0000 sp_final=0.834 t=7.0s
+[9/20] parity kan seed=3 val_final=0.8906 sp_final=0.834 t=6.9s
+[10/20] parity kan seed=4 val_final=0.6875 sp_final=0.834 t=6.9s
+[11/20] mnist_d64 mlp seed=0 val_final=0.8500 sp_final=0.832 t=10.5s
+[12/20] mnist_d64 mlp seed=1 val_final=0.8300 sp_final=0.832 t=10.5s
+[13/20] mnist_d64 mlp seed=2 val_final=0.8850 sp_final=0.832 t=10.4s
+[14/20] mnist_d64 mlp seed=3 val_final=0.7900 sp_final=0.832 t=10.3s
+[15/20] mnist_d64 mlp seed=4 val_final=0.7950 sp_final=0.832 t=10.4s
+[16/20] mnist_d64 kan seed=0 val_final=0.7800 sp_final=0.832 t=45.3s
+[17/20] mnist_d64 kan seed=1 val_final=0.7250 sp_final=0.832 t=45.3s
+[18/20] mnist_d64 kan seed=2 val_final=0.7350 sp_final=0.832 t=46.7s
+[19/20] mnist_d64 kan seed=3 val_final=0.6250 sp_final=0.832 t=46.1s
+[20/20] mnist_d64 kan seed=4 val_final=0.6350 sp_final=0.832 t=44.5s
+
+mnist_d64    kan  final_val mean=0.7000 std=0.0602  sp=0.832
+mnist_d64    mlp  final_val mean=0.8300 std=0.0354  sp=0.832
+parity       kan  final_val mean=0.8500 std=0.1448  sp=0.834
+parity       mlp  final_val mean=0.7500 std=0.0778  sp=0.834

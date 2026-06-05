@@ -1,0 +1,72 @@
+[
+  {
+    "quant": "soft",
+    "seed": 0,
+    "final_val": 0.7599999904632568,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.41821599006653
+  },
+  {
+    "quant": "soft",
+    "seed": 1,
+    "final_val": 0.8100000023841858,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 31.73693323135376
+  },
+  {
+    "quant": "soft",
+    "seed": 2,
+    "final_val": 0.8149999976158142,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.31294775009155
+  },
+  {
+    "quant": "soft",
+    "seed": 3,
+    "final_val": 0.75,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.30193305015564
+  },
+  {
+    "quant": "soft",
+    "seed": 4,
+    "final_val": 0.7400000095367432,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 32.653839349746704
+  },
+  {
+    "quant": "bitnet",
+    "seed": 0,
+    "final_val": 0.8299999833106995,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 33.23369550704956
+  },
+  {
+    "quant": "bitnet",
+    "seed": 1,
+    "final_val": 0.800000011920929,
+    "final_sparsity": 0.5827660891089108,
+    "elapsed_s": 32.868295431137085
+  },
+  {
+    "quant": "bitnet",
+    "seed": 2,
+    "final_val": 0.8500000238418579,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 33.020851850509644
+  },
+  {
+    "quant": "bitnet",
+    "seed": 3,
+    "final_val": 0.7649999856948853,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 33.13907861709595
+  },
+  {
+    "quant": "bitnet",
+    "seed": 4,
+    "final_val": 0.7450000047683716,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 33.40001583099365
+  }
+]

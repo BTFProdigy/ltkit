@@ -1,0 +1,602 @@
+[
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.9490000042915344,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 27.18462371826172
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.9700000009536743,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.323012351989746
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.9559999971389771,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.053712368011475
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.9680000033378601,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 25.92553949356079
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.9629999899864197,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 25.83801579475403
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.8249999995231628,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 96.7308759689331
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.9130000052452087,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 97.20425248146057
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.8810000109672547,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 99.72578001022339
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.871,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 99.10010266304016
+  },
+  {
+    "task": "tabular",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.8499999961853028,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 99.59042501449585
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.9489999995231628,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.80873942375183
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.9700000143051147,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.54987621307373
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.953999990940094,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.64472246170044
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.9620000081062317,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 26.47192358970642
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.9530000057220459,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 25.111406326293945
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.8199999957084656,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 98.44598174095154
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.8989999942779541,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 97.73124504089355
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.8589999866485596,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 99.1665825843811
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.8759999904632568,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 108.90425705909729
+  },
+  {
+    "task": "tabular",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.777999988079071,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 108.01797890663147
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.9380000004768372,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 32.00983643531799
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.9650000033378601,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 31.81180214881897
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.945999990940094,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 30.841851472854614
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.9639999923706055,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 31.98513960838318
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.9599999876022339,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 30.604933261871338
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 50,
+    "final_val": 0.9240000028610229,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 128.977365732193
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 50,
+    "final_val": 0.9489999971389771,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 127.94088315963745
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 50,
+    "final_val": 0.9279999957084656,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 131.80990386009216
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 50,
+    "final_val": 0.9499999995231628,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 124.32580876350403
+  },
+  {
+    "task": "tabular",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 50,
+    "final_val": 0.9490000128746032,
+    "final_sparsity": 0.5907379518072289,
+    "elapsed_s": 117.86531686782837
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.8349999785423279,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.472677707672119
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.824999988079071,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.336721658706665
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.824999988079071,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.352660655975342
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.7599999904632568,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.32425594329834
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.7749999761581421,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.352941274642944
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.6899999976158142,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.677818775177002
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.7250000238418579,
+    "final_sparsity": 0.5905012376237624,
+    "elapsed_s": 24.36600637435913
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.7200000286102295,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.80256962776184
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.7049999833106995,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.578993797302246
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "plain",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.6549999713897705,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.64015531539917
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.8149999976158142,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.4096291065216064
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.7850000262260437,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.497312545776367
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.8650000095367432,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.499739646911621
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.7649999856948853,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.755831241607666
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.7350000143051147,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.421277046203613
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.5550000071525574,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.444595336914062
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.49000000953674316,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.553218126296997
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.4300000071525574,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.50898265838623
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.4699999988079071,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 24.07359743118286
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "pca",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.42500001192092896,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.848585605621338
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.8399999737739563,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 6.0498902797698975
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.8450000286102295,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.683116674423218
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.8550000190734863,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.9296875
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.7749999761581421,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.891838550567627
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "mlp",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.7850000262260437,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 6.125460386276245
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 0,
+    "in_dim": 64,
+    "final_val": 0.8050000071525574,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 28.662083387374878
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 1,
+    "in_dim": 64,
+    "final_val": 0.7549999952316284,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 28.53260064125061
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 2,
+    "in_dim": 64,
+    "final_val": 0.7149999737739563,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 28.586158275604248
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 3,
+    "in_dim": 64,
+    "final_val": 0.6600000262260437,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 28.822630882263184
+  },
+  {
+    "task": "mnist_d64",
+    "variant": "premix",
+    "arch": "kan",
+    "seed": 4,
+    "in_dim": 64,
+    "final_val": 0.7099999785423279,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 28.124334812164307
+  }
+]

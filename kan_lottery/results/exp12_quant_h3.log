@@ -1,0 +1,13 @@
+[1/10] quant=soft seed=0 val=0.7600 sp=0.591 t=32.1s
+[2/10] quant=soft seed=1 val=0.8100 sp=0.591 t=32.0s
+[3/10] quant=soft seed=2 val=0.8150 sp=0.591 t=32.3s
+[4/10] quant=soft seed=3 val=0.7500 sp=0.591 t=32.3s
+[5/10] quant=soft seed=4 val=0.7400 sp=0.591 t=32.5s
+[6/10] quant=q5 seed=0 val=0.7950 sp=0.591 t=34.6s
+[7/10] quant=q5 seed=1 val=0.7500 sp=0.591 t=34.7s
+[8/10] quant=q5 seed=2 val=0.7350 sp=0.591 t=34.7s
+[9/10] quant=q5 seed=3 val=0.7250 sp=0.591 t=35.6s
+[10/10] quant=q5 seed=4 val=0.7250 sp=0.591 t=35.0s
+
+q5   mean=0.7460 std=0.0262
+soft mean=0.7750 std=0.0313

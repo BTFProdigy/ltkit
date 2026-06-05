@@ -1,0 +1,48 @@
+Total configs: 42
+Grid: arch=['mlp', 'kan'], dim=[64, 128, 256, 784], proj_seeds=[12345, 67890], model_seeds=[0, 1, 2]
+
+[ 1/42] arch=mlp d= 64 proj=12345 seed=0  val=0.8350  sp=0.591  params= 13034  t=5.4s
+[ 2/42] arch=mlp d= 64 proj=12345 seed=1  val=0.8250  sp=0.591  params= 13034  t=5.4s
+[ 3/42] arch=mlp d= 64 proj=12345 seed=2  val=0.8250  sp=0.591  params= 13034  t=5.3s
+[ 4/42] arch=mlp d= 64 proj=67890 seed=0  val=0.8800  sp=0.591  params= 13034  t=5.4s
+[ 5/42] arch=mlp d= 64 proj=67890 seed=1  val=0.8200  sp=0.591  params= 13034  t=5.5s
+[ 6/42] arch=mlp d= 64 proj=67890 seed=2  val=0.8300  sp=0.591  params= 13034  t=5.3s
+[ 7/42] arch=mlp d=128 proj=12345 seed=0  val=0.9000  sp=0.591  params= 21226  t=5.6s
+[ 8/42] arch=mlp d=128 proj=12345 seed=1  val=0.8500  sp=0.591  params= 21226  t=5.6s
+[ 9/42] arch=mlp d=128 proj=12345 seed=2  val=0.9050  sp=0.591  params= 21226  t=5.5s
+[10/42] arch=mlp d=128 proj=67890 seed=0  val=0.8800  sp=0.591  params= 21226  t=5.7s
+[11/42] arch=mlp d=128 proj=67890 seed=1  val=0.8500  sp=0.591  params= 21226  t=5.6s
+[12/42] arch=mlp d=128 proj=67890 seed=2  val=0.8850  sp=0.591  params= 21226  t=5.6s
+[13/42] arch=mlp d=256 proj=12345 seed=0  val=0.8750  sp=0.590  params= 37610  t=6.2s
+[14/42] arch=mlp d=256 proj=12345 seed=1  val=0.8500  sp=0.590  params= 37610  t=6.2s
+[15/42] arch=mlp d=256 proj=12345 seed=2  val=0.8750  sp=0.590  params= 37610  t=6.1s
+[16/42] arch=mlp d=256 proj=67890 seed=0  val=0.8900  sp=0.590  params= 37610  t=6.0s
+[17/42] arch=mlp d=256 proj=67890 seed=1  val=0.8450  sp=0.590  params= 37610  t=6.1s
+[18/42] arch=mlp d=256 proj=67890 seed=2  val=0.9000  sp=0.590  params= 37610  t=6.1s
+[19/42] arch=mlp d=784 proj=    0 seed=0  val=0.8750  sp=0.365  params=105194  t=7.9s
+[20/42] arch=mlp d=784 proj=    0 seed=1  val=0.8350  sp=0.394  params=105194  t=7.5s
+[21/42] arch=mlp d=784 proj=    0 seed=2  val=0.8850  sp=0.372  params=105194  t=8.4s
+[22/42] arch=kan d= 64 proj=12345 seed=0  val=0.6900  sp=0.591  params= 45460  t=23.5s
+[23/42] arch=kan d= 64 proj=12345 seed=1  val=0.7250  sp=0.591  params= 45460  t=23.7s
+[24/42] arch=kan d= 64 proj=12345 seed=2  val=0.7200  sp=0.591  params= 45460  t=23.5s
+[25/42] arch=kan d= 64 proj=67890 seed=0  val=0.7700  sp=0.591  params= 45460  t=23.1s
+[26/42] arch=kan d= 64 proj=67890 seed=1  val=0.7100  sp=0.591  params= 45460  t=23.4s
+[27/42] arch=kan d= 64 proj=67890 seed=2  val=0.7200  sp=0.591  params= 45460  t=23.7s
+[28/42] arch=kan d=128 proj=12345 seed=0  val=0.7950  sp=0.591  params= 74132  t=28.6s
+[29/42] arch=kan d=128 proj=12345 seed=1  val=0.8150  sp=0.591  params= 74132  t=29.0s
+[30/42] arch=kan d=128 proj=12345 seed=2  val=0.8250  sp=0.591  params= 74132  t=29.2s
+[31/42] arch=kan d=128 proj=67890 seed=0  val=0.7900  sp=0.591  params= 74132  t=27.7s
+[32/42] arch=kan d=128 proj=67890 seed=1  val=0.8050  sp=0.591  params= 74132  t=28.6s
+[33/42] arch=kan d=128 proj=67890 seed=2  val=0.7850  sp=0.591  params= 74132  t=29.0s
+[34/42] arch=kan d=256 proj=12345 seed=0  val=0.8400  sp=0.590  params=131476  t=39.2s
+[35/42] arch=kan d=256 proj=12345 seed=1  val=0.7900  sp=0.590  params=131476  t=39.2s
+[36/42] arch=kan d=256 proj=12345 seed=2  val=0.8650  sp=0.590  params=131476  t=38.5s
+[37/42] arch=kan d=256 proj=67890 seed=0  val=0.8650  sp=0.590  params=131476  t=38.3s
+[38/42] arch=kan d=256 proj=67890 seed=1  val=0.8550  sp=0.590  params=131476  t=39.4s
+[39/42] arch=kan d=256 proj=67890 seed=2  val=0.8100  sp=0.590  params=131476  t=38.3s
+[40/42] arch=kan d=784 proj=    0 seed=0  val=0.8350  sp=0.590  params=368020  t=84.3s
+[41/42] arch=kan d=784 proj=    0 seed=1  val=0.8800  sp=0.590  params=368020  t=77.3s
+[42/42] arch=kan d=784 proj=    0 seed=2  val=0.8500  sp=0.590  params=368020  t=85.5s
+
+Total time: 15.4 min
+Saved → /home/mk-terminal/Downloads/files (1)/kan_lottery/results/mnist_ablation.json

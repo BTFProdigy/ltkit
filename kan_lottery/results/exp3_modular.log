@@ -1,0 +1,33 @@
+[1/30] mlp seed=0 val=0.0417 sp=0.5936 t=1.5s
+[2/30] mlp seed=1 val=0.0000 sp=0.3979 t=0.8s
+[3/30] mlp seed=2 val=0.0000 sp=0.5936 t=0.8s
+[4/30] mlp seed=3 val=0.0417 sp=0.5936 t=0.8s
+[5/30] mlp seed=4 val=0.0000 sp=0.5936 t=0.8s
+[6/30] mlp seed=5 val=0.0417 sp=0.5936 t=0.8s
+[7/30] mlp seed=6 val=0.0000 sp=0.3957 t=0.8s
+[8/30] mlp seed=7 val=0.0417 sp=0.5936 t=0.8s
+[9/30] mlp seed=8 val=0.0000 sp=0.5936 t=0.8s
+[10/30] mlp seed=9 val=0.0000 sp=0.5936 t=0.8s
+[11/30] mlp seed=10 val=0.0000 sp=0.5936 t=0.8s
+[12/30] mlp seed=11 val=0.0000 sp=0.5936 t=0.8s
+[13/30] mlp seed=12 val=0.0000 sp=0.5936 t=0.8s
+[14/30] mlp seed=13 val=0.0000 sp=0.5936 t=0.8s
+[15/30] mlp seed=14 val=0.0000 sp=0.5936 t=0.8s
+[16/30] kan seed=0 val=0.2500 sp=0.5936 t=1.8s
+[17/30] kan seed=1 val=0.2083 sp=0.5936 t=1.7s
+[18/30] kan seed=2 val=0.1667 sp=0.5936 t=1.8s
+[19/30] kan seed=3 val=0.2083 sp=0.5936 t=1.8s
+[20/30] kan seed=4 val=0.0833 sp=0.5936 t=1.8s
+[21/30] kan seed=5 val=0.1250 sp=0.5936 t=1.8s
+[22/30] kan seed=6 val=0.1250 sp=0.5936 t=1.8s
+[23/30] kan seed=7 val=0.2083 sp=0.5936 t=1.7s
+[24/30] kan seed=8 val=0.0833 sp=0.5936 t=1.7s
+[25/30] kan seed=9 val=0.0417 sp=0.5936 t=1.8s
+[26/30] kan seed=10 val=0.0417 sp=0.5936 t=1.7s
+[27/30] kan seed=11 val=0.2083 sp=0.5936 t=1.8s
+[28/30] kan seed=12 val=0.0417 sp=0.5936 t=1.8s
+[29/30] kan seed=13 val=0.1250 sp=0.5936 t=1.8s
+[30/30] kan seed=14 val=0.1250 sp=0.5936 t=1.8s
+
+mlp: mean=0.0111 std=0.0184 n=15
+kan: mean=0.1361 std=0.0671 n=15

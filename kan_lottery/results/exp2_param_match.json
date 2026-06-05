@@ -1,0 +1,452 @@
+[
+  {
+    "task": "modular_n11",
+    "arch": "kan",
+    "seed": 0,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 3392,
+    "final_val": 0.25,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 2.4719948768615723
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_narrow",
+    "seed": 0,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 991,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 0.7665810585021973
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_wide",
+    "seed": 0,
+    "dims": [
+      2,
+      80,
+      16,
+      11
+    ],
+    "n_params": 3339,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.5909653465346535,
+    "elapsed_s": 0.7730793952941895
+  },
+  {
+    "task": "modular_n11",
+    "arch": "kan",
+    "seed": 1,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 3392,
+    "final_val": 0.2083333283662796,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 1.7349512577056885
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_narrow",
+    "seed": 1,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 991,
+    "final_val": 0.0,
+    "final_sparsity": 0.3978723404255319,
+    "elapsed_s": 0.7657198905944824
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_wide",
+    "seed": 1,
+    "dims": [
+      2,
+      80,
+      16,
+      11
+    ],
+    "n_params": 3339,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.3849009900990099,
+    "elapsed_s": 0.777087926864624
+  },
+  {
+    "task": "modular_n11",
+    "arch": "kan",
+    "seed": 2,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 3392,
+    "final_val": 0.1666666716337204,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 1.7473783493041992
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_narrow",
+    "seed": 2,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 991,
+    "final_val": 0.0,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 0.7681798934936523
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_wide",
+    "seed": 2,
+    "dims": [
+      2,
+      80,
+      16,
+      11
+    ],
+    "n_params": 3339,
+    "final_val": 0.0,
+    "final_sparsity": 0.5909653465346535,
+    "elapsed_s": 0.7807891368865967
+  },
+  {
+    "task": "modular_n11",
+    "arch": "kan",
+    "seed": 3,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 3392,
+    "final_val": 0.2083333283662796,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 1.7445757389068604
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_narrow",
+    "seed": 3,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 991,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 0.768928050994873
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_wide",
+    "seed": 3,
+    "dims": [
+      2,
+      80,
+      16,
+      11
+    ],
+    "n_params": 3339,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.5581683168316831,
+    "elapsed_s": 0.7871017456054688
+  },
+  {
+    "task": "modular_n11",
+    "arch": "kan",
+    "seed": 4,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 3392,
+    "final_val": 0.0833333358168602,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 1.7297003269195557
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_narrow",
+    "seed": 4,
+    "dims": [
+      2,
+      30,
+      10,
+      11
+    ],
+    "n_params": 991,
+    "final_val": 0.0,
+    "final_sparsity": 0.5936170212765958,
+    "elapsed_s": 0.7708985805511475
+  },
+  {
+    "task": "modular_n11",
+    "arch": "mlp_wide",
+    "seed": 4,
+    "dims": [
+      2,
+      80,
+      16,
+      11
+    ],
+    "n_params": 3339,
+    "final_val": 0.0416666679084301,
+    "final_sparsity": 0.5909653465346535,
+    "elapsed_s": 0.7869040966033936
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "kan",
+    "seed": 0,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 45460,
+    "final_val": 0.6899999976158142,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.12908363342285
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_narrow",
+    "seed": 0,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 13034,
+    "final_val": 0.8349999785423279,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.401125192642212
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_wide",
+    "seed": 0,
+    "dims": [
+      64,
+      232,
+      32,
+      10
+    ],
+    "n_params": 45458,
+    "final_val": 0.8550000190734863,
+    "final_sparsity": 0.5904745042492918,
+    "elapsed_s": 6.608012914657593
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "kan",
+    "seed": 1,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 45460,
+    "final_val": 0.7250000238418579,
+    "final_sparsity": 0.5905012376237624,
+    "elapsed_s": 23.397432327270508
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_narrow",
+    "seed": 1,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 13034,
+    "final_val": 0.824999988079071,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.430064916610718
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_wide",
+    "seed": 1,
+    "dims": [
+      64,
+      232,
+      32,
+      10
+    ],
+    "n_params": 45458,
+    "final_val": 0.8349999785423279,
+    "final_sparsity": 0.5904745042492918,
+    "elapsed_s": 6.549511194229126
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "kan",
+    "seed": 2,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 45460,
+    "final_val": 0.7200000286102295,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.359328985214233
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_narrow",
+    "seed": 2,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 13034,
+    "final_val": 0.824999988079071,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.261349439620972
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_wide",
+    "seed": 2,
+    "dims": [
+      64,
+      232,
+      32,
+      10
+    ],
+    "n_params": 45458,
+    "final_val": 0.8299999833106995,
+    "final_sparsity": 0.5904745042492918,
+    "elapsed_s": 6.1934473514556885
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "kan",
+    "seed": 3,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 45460,
+    "final_val": 0.7049999833106995,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.141762733459473
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_narrow",
+    "seed": 3,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 13034,
+    "final_val": 0.7599999904632568,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.339704751968384
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_wide",
+    "seed": 3,
+    "dims": [
+      64,
+      232,
+      32,
+      10
+    ],
+    "n_params": 45458,
+    "final_val": 0.7649999856948853,
+    "final_sparsity": 0.5904745042492918,
+    "elapsed_s": 6.256241798400879
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "kan",
+    "seed": 4,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 45460,
+    "final_val": 0.6549999713897705,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 23.961535215377808
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_narrow",
+    "seed": 4,
+    "dims": [
+      64,
+      64,
+      32,
+      10
+    ],
+    "n_params": 13034,
+    "final_val": 0.7749999761581421,
+    "final_sparsity": 0.5906559405940595,
+    "elapsed_s": 5.4673075675964355
+  },
+  {
+    "task": "mnist_d64",
+    "arch": "mlp_wide",
+    "seed": 4,
+    "dims": [
+      64,
+      232,
+      32,
+      10
+    ],
+    "n_params": 45458,
+    "final_val": 0.7950000166893005,
+    "final_sparsity": 0.5904745042492918,
+    "elapsed_s": 6.845642328262329
+  }
+]

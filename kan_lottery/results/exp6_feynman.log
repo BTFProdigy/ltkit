@@ -1,0 +1,13 @@
+[1/10] mlp seed=0 val=0.01844 sp=0.978 t=4.9s
+[2/10] mlp seed=1 val=0.02187 sp=0.975 t=4.3s
+[3/10] mlp seed=2 val=0.01743 sp=0.976 t=4.4s
+[4/10] mlp seed=3 val=0.02310 sp=0.975 t=4.4s
+[5/10] mlp seed=4 val=0.01421 sp=0.976 t=4.7s
+[6/10] kan seed=0 val=0.05728 sp=0.995 t=13.9s
+[7/10] kan seed=1 val=0.03940 sp=0.995 t=13.9s
+[8/10] kan seed=2 val=0.02121 sp=0.997 t=14.2s
+[9/10] kan seed=3 val=0.01736 sp=0.995 t=14.0s
+[10/10] kan seed=4 val=0.11749 sp=0.991 t=14.2s
+
+mlp: mean=0.01901 std=0.00319
+kan: mean=0.05055 std=0.03637
