@@ -20,7 +20,8 @@ language. All heavy tensor math lives behind the contract.
 | Language | Core engine | Backend | Test |
 |----------|:----------:|---------|:----:|
 | Python | ✅ | torch | ✅ `tests/test_smoke.py` |
-| Python | — | keras/tf, jax | planned (code-only; not installed here) |
+| Python | ✅ | keras/tf | ✅ `tests/test_keras_smoke.py` |
+| Python | — | jax | planned |
 | Rust | ✅ | candle (BitNet target) | ✅ `cargo test --features candle` |
 | Rust | — | tch-rs | planned (shares libtorch) |
 | C++ | ✅ | libtorch | core done; backend planned |
@@ -53,8 +54,9 @@ ltkit/
 ## Running
 
 ```bash
-# Python
+# Python (torch + keras/tf)
 cd python && PYTHONPATH=$PWD python3 tests/test_smoke.py        # -> smoke OK
+KERAS_BACKEND=tensorflow PYTHONPATH=$PWD python3 tests/test_keras_smoke.py  # -> keras smoke OK
 
 # Rust core + candle backend
 cd rust && cargo test                                          # pure core
