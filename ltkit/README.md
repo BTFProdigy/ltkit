@@ -23,7 +23,7 @@ language. All heavy tensor math lives behind the contract.
 | Python | — | keras/tf, jax | planned (code-only; not installed here) |
 | Rust | ✅ | candle (BitNet target) | ✅ `cargo test --features candle` |
 | Rust | — | tch-rs | planned (shares libtorch) |
-| C++ | ✅ | libtorch | core done; backend planned |
+| C++ | ✅ | libtorch | ✅ `cmake -DTORCH_DIR=… && torch_smoke` |
 
 Every implemented core is validated against the **same invariants**: sparsity
 rises monotonically, the returned ticket mask agrees with the model's zeroed
@@ -46,8 +46,10 @@ ltkit/
     tests/{smoke,candle_smoke}.rs
     Cargo.toml           candle behind an optional feature
   cpp/
-    include/ltkit/ltkit.hpp   header-only engine (template-duck-typed model)
-    tests/smoke.cpp
+    include/ltkit/ltkit.hpp          header-only engine (template-duck-typed model)
+    include/ltkit/torch_backend.hpp  libtorch MLP backend
+    tests/{smoke,torch_smoke}.cpp
+    CMakeLists.txt
 ```
 
 ## Running
@@ -62,6 +64,11 @@ cargo test --features candle                                   # candle backend
 
 # C++ header-only core
 cd cpp && g++ -std=c++17 -I include tests/smoke.cpp -o smoke && ./smoke
+
+# C++ libtorch backend (use g++, not clang; pip wheel is pre-CXX11 ABI)
+cd cpp && cmake -S . -B build -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
+  -DTORCH_DIR="$(python3 -c 'import torch,os;print(os.path.dirname(torch.__file__))')"
+cmake --build build -j && ./build/torch_smoke
 ```
 
 ## Usage sketch (Python / torch)
