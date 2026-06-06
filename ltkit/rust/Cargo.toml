@@ -8,10 +8,14 @@ description = "Backend-agnostic lottery-ticket / IMP framework (Rust core)"
 default = []
 # candle backend is optional so the pure-Rust core compiles with zero heavy deps
 candle = ["dep:candle-core", "dep:candle-nn"]
+# tch backend shares libtorch with the Python/C++ torch backends; download-libtorch
+# fetches a matching CPU-only libtorch (correct pre/post-CXX11 ABI, rpath set).
+tch = ["dep:tch"]
 
 [dependencies]
 candle-core = { version = "0.8", optional = true }
 candle-nn = { version = "0.8", optional = true }
+tch = { version = "0.19", optional = true, features = ["download-libtorch"] }
 
 [lib]
 name = "ltkit"

@@ -10,14 +10,19 @@ class TorchBackend(PrunableModel):
         task: str = "classification",
         lr: float = 5e-3,
         batch_size: int = 32,
-        prunable_types=(nn.Linear, nn.Conv2d),
+        prunable_types=(nn.Linear, nn.Conv1d, nn.Conv2d, nn.Conv3d, nn.ConvTranspose1d, nn.ConvTranspose2d, nn.ConvTranspose3d),
         device=None,
+        loss_fn=None,
+        eval_fn=None,
     ):
+        """loss_fn(model, x, y) -> scalar tensor overrides the default CE/MSE training loss (for generative/diffusion/autoencoder models); eval_fn(model, data) -> float overrides the default accuracy/MSE metric (e.g. return -FID for images, -FAD for audio; higher is better)."""
         self.model = model
         self.task = task
         self.lr = lr
         self.batch_size = batch_size
         self.prunable_types = prunable_types
+        self.loss_fn = loss_fn
+        self.eval_fn = eval_fn
         params = list(model.parameters())
         self.device = torch.device(device if device is not None else (params[0].device if params else "cpu"))
         self.model.to(self.device)
@@ -124,7 +129,10 @@ class TorchBackend(PrunableModel):
                 self._last_batch = (x.detach(), y.detach())
                 opt.zero_grad(set_to_none=True)
                 out = self.model(x)
-                loss = loss_fn(out, y.long().view(-1)) if self.task == "classification" else loss_fn(out, y.float())
+                if self.loss_fn is not None:
+                    loss = self.loss_fn(self.model, x, y)
+                else:
+                    loss = loss_fn(out, y.long().view(-1)) if self.task == "classification" else loss_fn(out, y.float())
                 loss.backward()
                 opt.step()
                 for name in self.mask_buffers:
@@ -132,6 +140,10 @@ class TorchBackend(PrunableModel):
     def evaluate(self, data) -> float:
         was_training = self.model.training
         self.model.eval()
+        if self.eval_fn is not None:
+            metric = float(self.eval_fn(self.model, data))
+            self.model.train(was_training)
+            return metric
         if self.task == "classification":
             correct = total = 0
             with torch.no_grad():

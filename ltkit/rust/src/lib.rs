@@ -3,12 +3,13 @@
 //! The engine drives any model through the six verbs of [`PrunableModel`]
 //! (see `../CONTRACT.md`). Heavy tensor math lives behind the trait; the IMP
 //! loop itself is pure Rust with no external dependencies. The optional
-//! `candle` feature provides a native backend over `candle_core::VarMap`.
+//! `candle` feature provides a native backend over `candle_core::VarMap`, and
+//! the optional `tch` feature provides a libtorch backend over `tch::nn::VarStore`.
 
 pub mod contract;
 pub mod imp;
 
-#[cfg(feature = "candle")]
+#[cfg(any(feature = "candle", feature = "tch"))]
 pub mod backends;
 
 pub use contract::{Criterion, PrunableModel, RewindPolicy};

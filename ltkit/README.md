@@ -20,9 +20,10 @@ language. All heavy tensor math lives behind the contract.
 | Language | Core engine | Backend | Test |
 |----------|:----------:|---------|:----:|
 | Python | ✅ | torch | ✅ `tests/test_smoke.py` |
-| Python | — | keras/tf, jax | planned (code-only; not installed here) |
+| Python | ✅ | keras/tf | ✅ `tests/test_keras_smoke.py` |
+| Python | ✅ | jax (+optax) | ✅ `tests/test_jax_smoke.py` |
 | Rust | ✅ | candle (BitNet target) | ✅ `cargo test --features candle` |
-| Rust | — | tch-rs | planned (shares libtorch) |
+| Rust | ✅ | tch-rs (libtorch) | ✅ `cargo test --features tch` |
 | C++ | ✅ | libtorch | ✅ `cmake -DTORCH_DIR=… && torch_smoke` |
 
 Every implemented core is validated against the **same invariants**: sparsity
@@ -36,15 +37,15 @@ ltkit/
   CONTRACT.md            canonical six-verb spec (language-agnostic)
   python/
     ltkit/core/          protocol.py, imp.py (engine)
-    ltkit/backends/      torch_backend.py (+ keras/jax planned)
+    ltkit/backends/      torch_backend.py, keras_backend.py, jax_backend.py
     tests/test_smoke.py
     pyproject.toml
   rust/
     src/contract.rs      trait PrunableModel + enums
     src/imp.rs           engine (generic over T: PrunableModel)
-    src/backends/candle.rs
-    tests/{smoke,candle_smoke}.rs
-    Cargo.toml           candle behind an optional feature
+    src/backends/candle.rs, tch_backend.rs
+    tests/{smoke,candle_smoke,tch_smoke}.rs
+    Cargo.toml           candle / tch behind optional features
   cpp/
     include/ltkit/ltkit.hpp          header-only engine (template-duck-typed model)
     include/ltkit/torch_backend.hpp  libtorch MLP backend
@@ -55,12 +56,19 @@ ltkit/
 ## Running
 
 ```bash
-# Python
+# Python (torch + keras/tf)
 cd python && PYTHONPATH=$PWD python3 tests/test_smoke.py        # -> smoke OK
+KERAS_BACKEND=tensorflow PYTHONPATH=$PWD python3 tests/test_keras_smoke.py  # -> keras smoke OK
+JAX_PLATFORMS=cpu PYTHONPATH=$PWD python3 tests/test_jax_smoke.py           # -> jax smoke OK
 
 # Rust core + candle backend
 cd rust && cargo test                                          # pure core
 cargo test --features candle                                   # candle backend
+
+# Rust tch-rs (libtorch) backend — download-libtorch fetches a CPU libtorch.
+# On this box the NVIDIA HPC SDK headers shadow GCC's intrinsics, so force g++
+# and drop the NVHPC include path:
+env -u CPLUS_INCLUDE_PATH CXX=g++ CC=gcc cargo test --features tch  # -> tch_imp_smoke ok
 
 # C++ header-only core
 cd cpp && g++ -std=c++17 -I include tests/smoke.cpp -o smoke && ./smoke
