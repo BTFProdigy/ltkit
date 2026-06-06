@@ -26,8 +26,8 @@ def test_imp_jax_smoke():
     X, y = _make(W, 0)
     Xv, yv = _make(W, 1)
 
-    backend = JaxBackend([d, 32, k], task="classification", lr=1e-2,
-                         batch_size=64, seed=0)
+    backend = JaxBackend.mlp([d, 32, k], task="classification", lr=1e-2,
+                             batch_size=64, seed=0)
 
     cfg = IMPConfig(rounds=4, prune_rate=0.3, epochs_per=20,
                     criterion=Criterion.MAGNITUDE, rewind=RewindPolicy.INIT,

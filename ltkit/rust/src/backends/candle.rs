@@ -3,14 +3,18 @@
 use std::collections::HashMap;
 
 use candle_core::{DType, Device, Result, Tensor};
-use candle_nn::{linear, loss, AdamW, Linear, Module, Optimizer, ParamsAdamW, VarBuilder, VarMap};
+use candle_nn::{
+    linear, loss, AdamW, Linear, Module, Optimizer, ParamsAdamW, VarBuilder, VarMap,
+};
 
 use crate::contract::{Criterion, PrunableModel};
 
-// VarMap is not Debug/Clone, so CandleMlp can't derive them.
-pub struct CandleMlp {
+pub type ForwardFn = Box<dyn Fn(&Tensor) -> Result<Tensor>>;
+pub type EvalFn = Box<dyn Fn(&Tensor, &Tensor) -> Result<f32>>;
+
+pub struct CandleModel {
     varmap: VarMap,
-    layers: Vec<Linear>,
+    forward_fn: ForwardFn,
     masks: HashMap<String, Tensor>,
     device: Device,
     x: Tensor,
@@ -18,55 +22,43 @@ pub struct CandleMlp {
     xv: Tensor,
     yv: Tensor,
     lr: f64,
+    eval_fn: Option<EvalFn>,
 }
 
-impl CandleMlp {
+impl CandleModel {
     pub fn new(
-        dims: &[usize],
+        varmap: VarMap,
+        forward_fn: ForwardFn,
         train: (Tensor, Tensor),
         val: (Tensor, Tensor),
         lr: f64,
         device: Device,
+        eval_fn: Option<EvalFn>,
     ) -> Result<Self> {
-        if dims.len() < 2 {
-            candle_core::bail!("dims must have at least input and output sizes");
-        }
-        let varmap = VarMap::new();
-        let vb = VarBuilder::from_varmap(&varmap, DType::F32, &device);
-        let mut layers = Vec::with_capacity(dims.len() - 1);
-        for i in 0..dims.len() - 1 {
-            layers.push(linear(dims[i], dims[i + 1], vb.pp(format!("l{i}")))?);
-        }
         Ok(Self {
             varmap,
-            layers,
+            forward_fn,
             masks: HashMap::new(),
             x: train.0.to_device(&device)?.to_dtype(DType::F32)?,
             y: train.1.to_device(&device)?.to_dtype(DType::U32)?.flatten_all()?,
             xv: val.0.to_device(&device)?.to_dtype(DType::F32)?,
             yv: val.1.to_device(&device)?.to_dtype(DType::U32)?.flatten_all()?,
-            device,
             lr,
+            eval_fn,
+            device,
         })
     }
 
     fn forward(&self, x: &Tensor) -> Result<Tensor> {
-        let mut h = x.clone();
-        for (i, layer) in self.layers.iter().enumerate() {
-            h = layer.forward(&h)?;
-            if i + 1 != self.layers.len() {
-                h = h.relu()?;
-            }
-        }
-        Ok(h)
+        (self.forward_fn)(x)
     }
 
     fn parameter_groups_result(&self) -> Result<Vec<String>> {
         let data = self.varmap.data().lock().unwrap();
         let mut names = data
-            .keys()
-            .filter(|name| name.contains(".weight"))
-            .cloned()
+            .iter()
+            .filter(|(name, var)| name.contains(".weight") && var.as_tensor().rank() >= 2)
+            .map(|(name, _)| name.clone())
             .collect::<Vec<_>>();
         names.sort();
         Ok(names)
@@ -88,37 +80,35 @@ impl CandleMlp {
                 .unwrap_or_else(|| panic!("missing parameter group {name}"))
         };
         let weight = var.as_tensor();
-        if mask.len() != weight.elem_count() {
-            candle_core::bail!("mask size mismatch for {name}");
-        }
-        let mask_tensor = Tensor::from_vec(
-            mask.iter().map(|&b| if b { 1f32 } else { 0f32 }).collect::<Vec<_>>(),
+        assert_eq!(mask.len(), weight.elem_count());
+        let mask_t = Tensor::from_slice(
+            &mask
+                .iter()
+                .map(|&b| if b { 1f32 } else { 0f32 })
+                .collect::<Vec<f32>>(),
             weight.shape().clone(),
             &self.device,
         )?;
-        var.set(&weight.mul(&mask_tensor)?)?;
-        self.masks.insert(name.to_string(), mask_tensor);
+        let masked = (weight * &mask_t)?;
+        var.set(&masked)?;
+        self.masks.insert(name.to_string(), mask_t);
         Ok(())
     }
 
     fn snapshot_result(&self) -> Result<HashMap<String, Tensor>> {
         let data = self.varmap.data().lock().unwrap();
-        let mut state = HashMap::with_capacity(data.len());
-        for (name, var) in data.iter() {
-            state.insert(name.clone(), var.as_tensor().copy()?);
-        }
-        Ok(state)
+        data.iter()
+            .map(|(name, var)| Ok((name.clone(), var.as_tensor().copy()?)))
+            .collect()
     }
 
-    fn reapply_masks(&self) -> Result<()> {
+    fn reapply_masks_result(&self) -> Result<()> {
+        let data = self.varmap.data().lock().unwrap();
         for (name, mask) in &self.masks {
-            let var = {
-                let data = self.varmap.data().lock().unwrap();
-                data.get(name)
-                    .cloned()
-                    .unwrap_or_else(|| panic!("missing parameter group {name}"))
-            };
-            var.set(&var.as_tensor().mul(mask)?)?;
+            if let Some(var) = data.get(name) {
+                let masked = (var.as_tensor() * mask)?;
+                var.set(&masked)?;
+            }
         }
         Ok(())
     }
@@ -132,21 +122,22 @@ impl CandleMlp {
                 }
             }
         }
-        self.reapply_masks()?;
-        Ok(())
+        self.reapply_masks_result()
     }
 
     fn fit_result(&mut self, epochs: usize) -> Result<()> {
-        let params = ParamsAdamW {
-            lr: self.lr,
-            ..Default::default()
-        };
-        let mut opt = AdamW::new(self.varmap.all_vars(), params)?;
+        let mut opt = AdamW::new(
+            self.varmap.all_vars(),
+            ParamsAdamW {
+                lr: self.lr,
+                ..Default::default()
+            },
+        )?;
         for _ in 0..epochs {
             let logits = self.forward(&self.x)?;
             let loss = loss::cross_entropy(&logits, &self.y)?;
             opt.backward_step(&loss)?;
-            self.reapply_masks()?;
+            self.reapply_masks_result()?;
         }
         Ok(())
     }
@@ -155,8 +146,11 @@ impl CandleMlp {
         if self.yv.elem_count() == 0 {
             return Ok(0.0);
         }
-        let logits = self.forward(&self.xv)?;
-        let preds = logits.argmax(candle_core::D::Minus1)?.flatten_all()?;
+        let out = self.forward(&self.xv)?;
+        if let Some(ef) = &self.eval_fn {
+            return ef(&out, &self.yv);
+        }
+        let preds = out.argmax(candle_core::D::Minus1)?.flatten_all()?;
         Ok(preds
             .eq(&self.yv)?
             .to_dtype(DType::F32)?
@@ -165,7 +159,7 @@ impl CandleMlp {
     }
 }
 
-impl PrunableModel for CandleMlp {
+impl PrunableModel for CandleModel {
     type State = HashMap<String, Tensor>;
 
     fn parameter_groups(&self) -> Vec<String> {
@@ -188,7 +182,8 @@ impl PrunableModel for CandleMlp {
     }
 
     fn restore(&mut self, state: &Self::State) {
-        self.restore_result(state).expect("candle restore failed")
+        self.restore_result(state)
+            .expect("candle restore failed")
     }
 
     fn fit(&mut self, epochs: usize) {
@@ -196,6 +191,41 @@ impl PrunableModel for CandleMlp {
     }
 
     fn evaluate(&self) -> f32 {
-        self.evaluate_result().expect("candle evaluate failed")
+        self.evaluate_result()
+            .expect("candle evaluate failed")
+    }
+}
+
+pub struct CandleMlp;
+
+impl CandleMlp {
+    pub fn new(
+        dims: &[usize],
+        train: (Tensor, Tensor),
+        val: (Tensor, Tensor),
+        lr: f64,
+        device: Device,
+    ) -> Result<CandleModel> {
+        if dims.len() < 2 {
+            candle_core::bail!("dims must have at least input and output sizes");
+        }
+        let varmap = VarMap::new();
+        let vb = VarBuilder::from_varmap(&varmap, DType::F32, &device);
+        let mut layers: Vec<Linear> = Vec::with_capacity(dims.len() - 1);
+        for i in 0..dims.len() - 1 {
+            layers.push(linear(dims[i], dims[i + 1], vb.pp(format!("l{i}")))?);
+        }
+        let n = layers.len();
+        let forward_fn: ForwardFn = Box::new(move |x: &Tensor| -> Result<Tensor> {
+            let mut h = x.clone();
+            for (i, layer) in layers.iter().enumerate() {
+                h = layer.forward(&h)?;
+                if i + 1 != n {
+                    h = h.relu()?;
+                }
+            }
+            Ok(h)
+        });
+        CandleModel::new(varmap, forward_fn, train, val, lr, device, None)
     }
 }

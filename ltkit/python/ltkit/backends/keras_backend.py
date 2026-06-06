@@ -8,11 +8,18 @@ from ..core.protocol import Criterion, PrunableModel
 
 
 class KerasBackend(PrunableModel):
-    def __init__(self, model, task="classification", lr=5e-3, batch_size=32):
+    def __init__(self, model, task="classification", lr=5e-3, batch_size=32,
+                 loss_fn=None, eval_fn=None):
+        # loss_fn(model, x, y) -> scalar tensor overrides the default CE/MSE
+        # training loss (generative / diffusion / autoencoder models).
+        # eval_fn(model, data) -> float overrides the default accuracy/MSE metric
+        # (e.g. return -FID for images, -FAD for audio; higher is better).
         self.model = model
         self.task = task
         self.lr = lr
         self.batch_size = batch_size
+        self.loss_fn = loss_fn
+        self.eval_fn = eval_fn
         self.masks = {}
         self._last_batch = None
 
@@ -107,11 +114,14 @@ class KerasBackend(PrunableModel):
             for xb, yb in self._batches(data):
                 self._last_batch = (xb, yb)
                 with tf.GradientTape() as tape:
-                    logits = self.model(xb, training=True)
-                    if self.task == "classification":
-                        loss = loss_fn(yb, logits)
+                    if self.loss_fn is not None:
+                        loss = self.loss_fn(self.model, xb, yb)
                     else:
-                        loss = loss_fn(tf.cast(yb, tf.float32), logits)
+                        logits = self.model(xb, training=True)
+                        if self.task == "classification":
+                            loss = loss_fn(yb, logits)
+                        else:
+                            loss = loss_fn(tf.cast(yb, tf.float32), logits)
                 grads = tape.gradient(loss, self.model.trainable_variables)
                 pairs = [(g, v) for g, v in zip(grads, self.model.trainable_variables) if g is not None]
                 if pairs:
@@ -119,6 +129,8 @@ class KerasBackend(PrunableModel):
                 self._reapply_masks()
 
     def evaluate(self, data) -> float:
+        if self.eval_fn is not None:
+            return float(self.eval_fn(self.model, data))
         X, y = data
         logits = self.model(tf.convert_to_tensor(X, tf.float32), training=False)
         if self.task == "classification":

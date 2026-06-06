@@ -7,9 +7,12 @@ use tch::{nn, nn::Module, nn::OptimizerConfig, Device, Kind, Tensor};
 
 use crate::contract::{Criterion, PrunableModel};
 
-pub struct TchMlp {
+type ForwardFn = Box<dyn Fn(&Tensor) -> Tensor>;
+type EvalFn = Box<dyn Fn(&Tensor, &Tensor) -> f32>;
+
+pub struct TchModel {
     vs: nn::VarStore,
-    layers: Vec<nn::Linear>,
+    forward_fn: ForwardFn,
     masks: HashMap<String, Tensor>,
     device: Device,
     x: Tensor,
@@ -17,31 +20,22 @@ pub struct TchMlp {
     xv: Tensor,
     yv: Tensor,
     lr: f64,
+    eval_fn: Option<EvalFn>,
 }
 
-impl TchMlp {
+impl TchModel {
     pub fn new(
-        dims: &[usize],
+        vs: nn::VarStore,
+        forward_fn: ForwardFn,
         train: (Tensor, Tensor),
         val: (Tensor, Tensor),
         lr: f64,
         device: Device,
+        eval_fn: Option<EvalFn>,
     ) -> Self {
-        assert!(dims.len() >= 2, "dims must have at least input and output sizes");
-        let vs = nn::VarStore::new(device);
-        let root = &vs.root();
-        let mut layers = Vec::with_capacity(dims.len() - 1);
-        for i in 0..dims.len() - 1 {
-            layers.push(nn::linear(
-                root / &format!("l{i}"),
-                dims[i] as i64,
-                dims[i + 1] as i64,
-                Default::default(),
-            ));
-        }
         Self {
             vs,
-            layers,
+            forward_fn,
             masks: HashMap::new(),
             device,
             x: train.0.to_device(device).to_kind(Kind::Float),
@@ -49,27 +43,21 @@ impl TchMlp {
             xv: val.0.to_device(device).to_kind(Kind::Float),
             yv: val.1.to_device(device).to_kind(Kind::Int64).flatten(0, -1),
             lr,
+            eval_fn,
         }
     }
 
     fn forward(&self, x: &Tensor) -> Tensor {
-        let mut h = x.shallow_clone();
-        for (i, layer) in self.layers.iter().enumerate() {
-            h = layer.forward(&h);
-            if i + 1 != self.layers.len() {
-                h = h.relu();
-            }
-        }
-        h
+        (self.forward_fn)(x)
     }
 
     fn parameter_groups_result(&self) -> Vec<String> {
         let mut names: Vec<String> = self
             .vs
             .variables()
-            .keys()
-            .filter(|n| n.ends_with(".weight"))
-            .cloned()
+            .iter()
+            .filter(|(n, w)| n.ends_with(".weight") && w.size().len() >= 2)
+            .map(|(n, _)| n.clone())
             .collect();
         names.sort();
         names
@@ -85,19 +73,15 @@ impl TchMlp {
     fn apply_mask_result(&mut self, name: &str, mask: &[bool]) {
         let vars = self.vs.variables();
         let w = vars.get(name).expect("missing").shallow_clone();
-        assert_eq!(mask.len(), w.numel());
+        assert_eq!(mask.len(), w.numel() as usize);
         let shape = w.size();
-        let mask_t = Tensor::from_slice(
-            &mask
-                .iter()
-                .map(|&b| if b { 1f32 } else { 0f32 })
-                .collect::<Vec<f32>>(),
-        )
-        .to_device(self.device)
-        .reshape(&shape);
+        let mask_data: Vec<f32> = mask.iter().map(|&b| if b { 1.0 } else { 0.0 }).collect();
+        let mask_t = Tensor::from_slice(&mask_data)
+            .to_device(self.device)
+            .reshape(&shape);
         tch::no_grad(|| {
-            let mut w = w.shallow_clone();
-            let _ = w.g_mul_(&mask_t);
+            let mut w2 = w.shallow_clone();
+            let _ = w2.g_mul_(&mask_t);
         });
         self.masks.insert(name.to_string(), mask_t);
     }
@@ -107,8 +91,8 @@ impl TchMlp {
         for (name, m) in &self.masks {
             if let Some(w) = vars.get(name) {
                 tch::no_grad(|| {
-                    let mut w = w.shallow_clone();
-                    let _ = w.g_mul_(m);
+                    let mut w2 = w.shallow_clone();
+                    let _ = w2.g_mul_(m);
                 });
             }
         }
@@ -127,8 +111,8 @@ impl TchMlp {
             let vars = self.vs.variables();
             for (name, t) in state {
                 if let Some(w) = vars.get(name) {
-                    let mut w = w.shallow_clone();
-                    let _ = w.copy_(t);
+                    let mut w2 = w.shallow_clone();
+                    let _ = w2.copy_(t);
                 }
             }
         });
@@ -149,8 +133,11 @@ impl TchMlp {
         if self.yv.numel() == 0 {
             return 0.0;
         }
-        let logits = self.forward(&self.xv);
-        let preds = logits.argmax(-1, false);
+        let out = self.forward(&self.xv);
+        if let Some(ef) = &self.eval_fn {
+            return ef(&out, &self.yv);
+        }
+        let preds = out.argmax(-1, false);
         let acc = preds
             .eq_tensor(&self.yv)
             .to_kind(Kind::Float)
@@ -159,7 +146,7 @@ impl TchMlp {
     }
 }
 
-impl PrunableModel for TchMlp {
+impl PrunableModel for TchModel {
     type State = HashMap<String, Tensor>;
 
     fn parameter_groups(&self) -> Vec<String> {
@@ -188,5 +175,42 @@ impl PrunableModel for TchMlp {
 
     fn evaluate(&self) -> f32 {
         self.evaluate_result()
+    }
+}
+
+pub struct TchMlp;
+
+impl TchMlp {
+    pub fn new(
+        dims: &[usize],
+        train: (Tensor, Tensor),
+        val: (Tensor, Tensor),
+        lr: f64,
+        device: Device,
+    ) -> TchModel {
+        assert!(dims.len() >= 2, "dims must have at least input and output sizes");
+        let vs = nn::VarStore::new(device);
+        let root = &vs.root();
+        let mut layers = Vec::with_capacity(dims.len() - 1);
+        for i in 0..dims.len() - 1 {
+            layers.push(nn::linear(
+                root / &format!("l{i}"),
+                dims[i] as i64,
+                dims[i + 1] as i64,
+                Default::default(),
+            ));
+        }
+        let n = layers.len();
+        let forward_fn: ForwardFn = Box::new(move |x: &Tensor| {
+            let mut h = x.shallow_clone();
+            for (i, layer) in layers.iter().enumerate() {
+                h = layer.forward(&h);
+                if i + 1 != n {
+                    h = h.relu();
+                }
+            }
+            h
+        });
+        TchModel::new(vs, forward_fn, train, val, lr, device, None)
     }
 }
