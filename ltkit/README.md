@@ -23,7 +23,7 @@ language. All heavy tensor math lives behind the contract.
 | Python | ✅ | keras/tf | ✅ `tests/test_keras_smoke.py` |
 | Python | ✅ | jax (+optax) | ✅ `tests/test_jax_smoke.py` |
 | Rust | ✅ | candle (BitNet target) | ✅ `cargo test --features candle` |
-| Rust | — | tch-rs | planned (shares libtorch) |
+| Rust | ✅ | tch-rs (libtorch) | ✅ `cargo test --features tch` |
 | C++ | ✅ | libtorch | core done; backend planned |
 
 Every implemented core is validated against the **same invariants**: sparsity
@@ -43,9 +43,9 @@ ltkit/
   rust/
     src/contract.rs      trait PrunableModel + enums
     src/imp.rs           engine (generic over T: PrunableModel)
-    src/backends/candle.rs
-    tests/{smoke,candle_smoke}.rs
-    Cargo.toml           candle behind an optional feature
+    src/backends/candle.rs, tch_backend.rs
+    tests/{smoke,candle_smoke,tch_smoke}.rs
+    Cargo.toml           candle / tch behind optional features
   cpp/
     include/ltkit/ltkit.hpp   header-only engine (template-duck-typed model)
     tests/smoke.cpp
@@ -62,6 +62,11 @@ JAX_PLATFORMS=cpu PYTHONPATH=$PWD python3 tests/test_jax_smoke.py           # ->
 # Rust core + candle backend
 cd rust && cargo test                                          # pure core
 cargo test --features candle                                   # candle backend
+
+# Rust tch-rs (libtorch) backend — download-libtorch fetches a CPU libtorch.
+# On this box the NVIDIA HPC SDK headers shadow GCC's intrinsics, so force g++
+# and drop the NVHPC include path:
+env -u CPLUS_INCLUDE_PATH CXX=g++ CC=gcc cargo test --features tch  # -> tch_imp_smoke ok
 
 # C++ header-only core
 cd cpp && g++ -std=c++17 -I include tests/smoke.cpp -o smoke && ./smoke
