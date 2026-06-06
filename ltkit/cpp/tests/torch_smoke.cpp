@@ -57,7 +57,7 @@ int main() {
     auto Xv = torch::from_blob(xv.data(), {n, d}, torch::kFloat32).clone();
     auto Yv = torch::from_blob(yv.data(), {n}, torch::kLong).clone();
 
-    ltkit::TorchMlp model({d, 32, k}, Xt, Yt, Xv, Yv, 0.05, dev);
+    auto model = ltkit::TorchMlp::make({d, 32, k}, Xt, Yt, Xv, Yv, 0.05, dev);
 
     ImpConfig cfg;
     cfg.rounds = 4;

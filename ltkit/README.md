@@ -2,7 +2,7 @@
 
 A backend-agnostic framework for finding **lottery tickets** (Frankle & Carbin
 iterative magnitude pruning with rewind) in trainable models — across PyTorch,
-TensorFlow, JAX, Rust (candle), and C++ (libtorch).
+TensorFlow, JAX, Rust (candle + tch-rs), and C++ (libtorch).
 
 The whole design rests on one idea: the IMP algorithm never touches a tensor.
 It drives any model through **six verbs**. Every backend in every language
@@ -48,7 +48,7 @@ ltkit/
     Cargo.toml           candle / tch behind optional features
   cpp/
     include/ltkit/ltkit.hpp          header-only engine (template-duck-typed model)
-    include/ltkit/torch_backend.hpp  libtorch MLP backend
+    include/ltkit/torch_backend.hpp  generic libtorch backend (TorchModel + TorchMlp)
     tests/{smoke,torch_smoke}.cpp
     CMakeLists.txt
 ```
@@ -93,6 +93,60 @@ cfg     = IMPConfig(rounds=4, prune_rate=0.3, criterion=Criterion.MAGNITUDE,
 result  = run_imp(backend, (X, y), (Xv, yv), cfg)
 # result.masks  -> the winning ticket;  result.history -> per-round metric/sparsity
 ```
+
+## Using it on your own model (any architecture)
+
+Every backend is a **generic wrapper**, not an MLP — the MLP in the tests is just
+a fixture. Hand it any model you build. The two Python backends auto-discover
+prunable layers; the others take your model plus a forward function.
+
+```python
+# Vision / generative model, custom prunable layers + a generative metric.
+import torch, torch.nn as nn
+from ltkit import IMPConfig, Criterion, RewindPolicy, run_imp
+from ltkit.backends import TorchBackend
+
+model = MyUNet(...)                      # any nn.Module (CNN, ViT, diffusion, …)
+
+def fid_metric(model, data):             # higher = better, so return -FID / -FAD
+    return -compute_fid(model, data)
+
+def diff_loss(model, x, y):              # custom training objective (no labels needed)
+    return model.diffusion_loss(x)
+
+backend = TorchBackend(
+    model,
+    prunable_types=(nn.Linear, nn.Conv2d, nn.Conv1d, nn.ConvTranspose2d),
+    loss_fn=diff_loss,                   # optional: overrides CE/MSE
+    eval_fn=fid_metric,                  # optional: overrides accuracy
+)
+cfg = IMPConfig(rounds=8, prune_rate=0.2, criterion=Criterion.MAGNITUDE,
+                rewind=RewindPolicy.NONE,  # NONE = one-shot, cheap for big gen models
+                scope="global")
+result = run_imp(backend, (X, y), (Xv, yv), cfg)
+```
+
+- **`prunable_types`** (torch) selects which layer classes to prune; Conv/ConvTranspose
+  are included by default. Keras auto-prunes any layer with a `.kernel` (Dense + all Conv).
+- **`eval_fn(model, data) -> float`** supplies a domain metric (FID/FAD/perceptual);
+  the engine only needs "higher is better". **`loss_fn(model, x, y)`** supplies a custom
+  training objective. Both default to classification/regression when omitted.
+- **`RewindPolicy.NONE`** is one-shot pruning (prune once, no retrain-from-rewind) —
+  the practical mode for large diffusion/audio models where full IMP is too expensive.
+
+The non-Python backends are generic too — pass your model + a forward fn:
+
+| Backend | Entry point | You provide |
+|---|---|---|
+| Python torch / keras | `TorchBackend(model, …)` / `KerasBackend(model, …)` | the model (layers auto-discovered) |
+| Python jax | `JaxBackend(params, apply_fn, …)` | params pytree + `apply_fn(params, X)` (prunable = `ndim>=2`) |
+| Rust candle | `CandleModel::new(varmap, forward_fn, …)` | a `VarMap` + `Fn(&Tensor)->Result<Tensor>` |
+| Rust tch | `TchModel::new(vs, forward_fn, …)` | a `VarStore` + `Fn(&Tensor)->Tensor` |
+| C++ libtorch | `TorchModel(module, forward_fn, …)` | `shared_ptr<nn::Module>` + `std::function` forward |
+
+Each also keeps an MLP convenience builder (`JaxBackend.mlp`, `CandleMlp::new`,
+`TchMlp::new`, `TorchMlp::make`) used by the smoke tests. Prunable params are the
+weight tensors of rank ≥ 2 (kernels), skipping 1-D biases/norms.
 
 ## Notes
 
