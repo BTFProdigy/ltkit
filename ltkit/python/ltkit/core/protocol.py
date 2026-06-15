@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Michael King — part of ltkit (https://github.com/BTFProdigy/ltkit)
+# Licensed under the Apache License, Version 2.0. See the LICENSE and NOTICE
+# files in the project root. Attribution must be retained in derivative works.
 from __future__ import annotations
 
 from enum import Enum
@@ -31,6 +35,11 @@ class PrunableModel(Protocol):
     def evaluate(self, data) -> float:
         """Evaluate the model and return a metric."""
 
+    def reinit(self, seed: int | None = None) -> None:
+        """Optional: re-draw all weights from a fresh random initialization
+        (re-applying any active masks). Required only for the RANDOM_REINIT
+        rewind control; backends that omit it cannot use that policy."""
+
 
 class Criterion(Enum):
     """Score criterion for the scores verb."""
@@ -46,4 +55,5 @@ class RewindPolicy(Enum):
 
     INIT = "init"
     EARLY_K = "early_k"
+    RANDOM_REINIT = "random_reinit"
     NONE = "none"

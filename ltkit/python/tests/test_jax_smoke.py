@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Michael King — part of ltkit (https://github.com/BTFProdigy/ltkit)
+# Licensed under the Apache License, Version 2.0. See the LICENSE and NOTICE
+# files in the project root. Attribution must be retained in derivative works.
 """End-to-end smoke test: IMP engine + JaxBackend (pure JAX + optax).
 
 Same invariants as the torch/keras tests: sparsity rises, the returned ticket

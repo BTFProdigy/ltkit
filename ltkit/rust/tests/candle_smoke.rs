@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2026 Michael King — part of ltkit (https://github.com/BTFProdigy/ltkit)
+// Licensed under the Apache License, Version 2.0. See the LICENSE and NOTICE
+// files in the project root. Attribution must be retained in derivative works.
 //! Candle backend end-to-end test: train an MLP, run IMP, check the engine
 //! invariants hold over a real tensor backend. Compiled only with `--features candle`.
 #![cfg(feature = "candle")]
